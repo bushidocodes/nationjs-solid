@@ -7,7 +7,7 @@ const AvatarReal = styled.div`
   top: -140px;
   height: 168px;
   width: 168px;
-  background-color: yellow;
+  background-color: white;
   border: 6px solid white;
   border-radius: 90px;
   overflow: hidden;
@@ -38,7 +38,7 @@ class TimelineTopSection extends Component {
             }}
           >
             <AvatarReal>
-              <Image src="user.image" />
+              <Image src={`[${decodeURIComponent(this.props.webid)}].image`} />
             </AvatarReal>
           </div>
           <div
@@ -51,7 +51,7 @@ class TimelineTopSection extends Component {
               fontSize: "24px"
             }}
           >
-            <Value src="user.name" />
+            <Value src={`[${decodeURIComponent(this.props.webid)}].name`} />
           </div>
         </div>
         <div style={{ backgroundColor: "white", height: "43px" }} />

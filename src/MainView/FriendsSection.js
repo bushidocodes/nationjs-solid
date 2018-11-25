@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 import { Value, Image, List } from "@solid/react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const FriendGrid = styled.div`
   display: grid;
@@ -21,6 +23,7 @@ const FriendGridItem = styled.div`
 
 const FriendImage = styled(Image)`
   height: 100px;
+  width: 100px;
 `;
 
 const FriendsSectionWrapper = styled.div`
@@ -41,6 +44,10 @@ const FriendName = styled.div`
   margin-left: 15px;
   text-align: left;
 `;
+const Text = styled.span`
+  font-weight: bold;
+  text-decoration: none;
+`;
 
 class FriendsSection extends Component {
   render() {
@@ -50,16 +57,20 @@ class FriendsSection extends Component {
           <h3 style={{ marginLeft: "30px", textAlign: "left" }}>Friends</h3>
         </FriendSectionHeader>
         <List
-          src="user.friends"
+          src={`[${decodeURIComponent(this.props.webid)}].friends`}
           container={items => <FriendGrid>{items}</FriendGrid>}
           children={(elem, index) => {
             return (
-              <FriendGridItem key={index}>
-                <FriendImage src={`[${elem.id}].image`} />
-                <FriendName>
-                  <Value src={`[${elem.id}].name`} />{" "}
-                </FriendName>
-              </FriendGridItem>
+              <Link key={index} to={`/${encodeURIComponent(elem.id)}`}>
+                <FriendGridItem>
+                  <FriendImage src={`[${elem.id}].image`} />
+                  <FriendName>
+                    <Text>
+                      <Value src={`[${elem.id}].name`} />
+                    </Text>
+                  </FriendName>
+                </FriendGridItem>
+              </Link>
             );
           }}
         />
