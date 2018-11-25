@@ -1,3 +1,5 @@
+// Polyfill TextEncoder for Edge
+import "fast-text-encoding";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
