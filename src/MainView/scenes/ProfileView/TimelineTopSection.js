@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Value, Image } from "@solid/react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const AvatarReal = styled.div`
@@ -15,6 +16,28 @@ const AvatarReal = styled.div`
     height: 100%;
     width: 100%;
   }
+`;
+
+const SectionHeader = styled.div`
+  /* background-color: #f5f6f7; */
+  background-color: white;
+  border: solid 1px #ccd0d5;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  height: 43px;
+  padding-left: 201px;
+`;
+
+const SectionHeaderItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-weight: 600;
+  padding-left: 17px;
+  padding-right: 17px;
+  border: 1px solid #e9eaed;
 `;
 
 class TimelineTopSection extends Component {
@@ -54,7 +77,22 @@ class TimelineTopSection extends Component {
             <Value src={`[${decodeURIComponent(this.props.webid)}].name`} />
           </div>
         </div>
-        <div style={{ backgroundColor: "white", height: "43px" }} />
+        <div style={{ backgroundColor: "white", height: "43px" }}>
+          <SectionHeader>
+            <Link to={`/${this.props.webid}/`}>
+              <SectionHeaderItem>Timeline</SectionHeaderItem>
+            </Link>
+            <Link to={`/${this.props.webid}/about/`}>
+              <SectionHeaderItem>About</SectionHeaderItem>
+            </Link>
+            <Link to={`/${this.props.webid}/friends/`}>
+              <SectionHeaderItem>Friends</SectionHeaderItem>
+            </Link>
+            <Link to={`/${this.props.webid}/photos/`}>
+              <SectionHeaderItem>Photos</SectionHeaderItem>
+            </Link>
+          </SectionHeader>
+        </div>
       </div>
     );
   }

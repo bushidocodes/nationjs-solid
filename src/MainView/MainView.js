@@ -1,10 +1,13 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
-import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
-import FriendsSection from "./scenes/ProfileView/FriendsSection";
 import { Route, Switch } from "react-router-dom";
 import About from "./scenes/About";
 import NavBar from "./components/NavBar";
+import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
+import TimelineSection from "./scenes/ProfileView/TimelineSection";
+import FriendsSection from "./scenes/ProfileView/FriendsSection";
+import AboutSection from "./scenes/ProfileView/AboutSection";
+import PhotosSection from "./scenes/ProfileView/PhotosSection";
 
 const MainContent = styled.div`
   height: 100%;
@@ -44,7 +47,44 @@ class MainView extends Component {
                 }) => (
                   <Fragment>
                     <TimelineTopSection webid={webid} />
-                    <FriendsSection webid={webid} />
+                    <Switch>
+                      <Route
+                        path="/:webid/"
+                        exact
+                        render={({
+                          match: {
+                            params: { webid }
+                          }
+                        }) => <TimelineSection webid={webid} />}
+                      />
+                      <Route
+                        path="/:webid/about/"
+                        exact
+                        render={({
+                          match: {
+                            params: { webid }
+                          }
+                        }) => <AboutSection webid={webid} />}
+                      />
+                      <Route
+                        path="/:webid/friends/"
+                        exact
+                        render={({
+                          match: {
+                            params: { webid }
+                          }
+                        }) => <FriendsSection webid={webid} />}
+                      />
+                      <Route
+                        path="/:webid/photos/"
+                        exact
+                        render={({
+                          match: {
+                            params: { webid }
+                          }
+                        }) => <PhotosSection webid={webid} />}
+                      />
+                    </Switch>
                   </Fragment>
                 )}
               />

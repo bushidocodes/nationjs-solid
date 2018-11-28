@@ -31,16 +31,15 @@ const FriendsSectionWrapper = styled.div`
   margin-top: 12px;
   display: flex;
   flex-direction: column;
+  border: solid 1px #d3d6db;
 `;
 
 const SectionHeader = styled.div`
-  /* background-color: #f5f6f7; */
-  background-color: white;
-  border: solid 1px #ccd0d5;
-  border-radius: 3px;
-  display: flex;
-  flex-direction: row;
-  height: 43px;
+  background-color: #f5f6f7;
+  text-align: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: solid 1px #d3d6db;
 `;
 
 const FriendName = styled.div`
@@ -53,26 +52,12 @@ const Text = styled.span`
   text-decoration: none;
 `;
 
-const SectionHeaderItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  font-weight: 600;
-  padding-left: 17px;
-  padding-right: 17px;
-  border: 1px solid #e9eaed;
-`;
-
 class FriendsSection extends Component {
   render() {
     return (
       <FriendsSectionWrapper>
         <SectionHeader>
-          <SectionHeaderItem>Timeline</SectionHeaderItem>
-          <SectionHeaderItem>About</SectionHeaderItem>
-          <SectionHeaderItem>Friends</SectionHeaderItem>
-          <SectionHeaderItem>Photos</SectionHeaderItem>
+          <h3>Friends</h3>
         </SectionHeader>
         <List
           src={`[${decodeURIComponent(this.props.webid)}].friends`}
