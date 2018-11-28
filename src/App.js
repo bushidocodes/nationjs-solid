@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LoggedIn, LoggedOut } from "@solid/react";
 import styled from "styled-components";
 import Login from "./LogIn/Login";
-import MainView from "./MainView/MainView";
+import MainView from "./MainView";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const AppWrapper = styled.div`

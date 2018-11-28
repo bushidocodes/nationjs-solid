@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
-import logo from "../logo.svg";
+import logo from "./logo.svg";
 import { AuthButton } from "@solid/react";
 import styled from "styled-components";
 import ProfileBadge from "./ProfileBadge";

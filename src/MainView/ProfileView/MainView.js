@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
-import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
-import FriendsSection from "./scenes/ProfileView/FriendsSection";
+import TimelineTopSection from "../scenes/ProfileView/TimelineTopSection";
+import FriendsSection from "../scenes/ProfileView/FriendsSection";
 import { Route, Switch } from "react-router-dom";
-import About from "./scenes/About";
-import NavBar from "./components/NavBar";
+import About from "../scenes/About";
+import NavBar from "../NavBar/NavBar";
 
 const MainContent = styled.div`
   height: 100%;
