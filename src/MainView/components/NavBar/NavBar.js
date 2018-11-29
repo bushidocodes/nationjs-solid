@@ -10,7 +10,6 @@ const Icon = styled.img`
   height: 35px;
   width: 35px;
   align-self: center;
-  margin-left: 10px;
 `;
 
 const StyledLogOutButton = styled(AuthButton)`
@@ -20,15 +19,16 @@ const StyledLogOutButton = styled(AuthButton)`
   border-width: 1px;
   color: #fff;
   height: 24px;
-  width: 75px;
+  width: 80px;
   font-size: 14px;
   font-weight: bold;
   font-family: sans-serif;
   align-self: center;
-  margin-right: 10px;
 `;
 
 const NavBarWrapper = styled.div`
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: #4267b2;
   color: #fff;
   height: 43px;
@@ -54,12 +54,20 @@ class NavBar extends Component {
     } else {
       return (
         <NavBarWrapper>
-          <Link style={{ alignSelf: "center" }} to="/">
+          <Link
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gridTemplateRows: "1fr",
+              alignContent: "center"
+            }}
+            to="/"
+          >
             <Icon src={logo} alt="logo" />
           </Link>
           <NavBarField webid={this.props.webid} key={this.props.webid || ""} />
           <ProfileBadge />
-          <StyledLogOutButton popup="popup.html" />
+          <StyledLogOutButton popup="/popup.html" />
         </NavBarWrapper>
       );
     }

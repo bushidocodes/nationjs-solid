@@ -55,7 +55,7 @@ class Login extends Component {
         </NavBarLoggedOut>
         <MainContent>
           <MainContentCenterLoggedOut>
-            <StyledLogInButton popup="popup.html" />
+            <StyledLogInButton popup="/popup.html" />
           </MainContentCenterLoggedOut>
         </MainContent>
       </Fragment>

@@ -18,11 +18,13 @@ const StyledSubmit = styled.input`
 `;
 
 const URIForm = styled.form`
+  height: 43px;
   display: grid;
-  grid-template-columns: 1fr 75px;
-  * {
+  grid-template-columns: 1fr 80px;
+  align-content: center;
+  /* * {
     margin: 10px;
-  }
+  } */
 `;
 
 class NavBar extends Component {
@@ -42,7 +44,7 @@ class NavBar extends Component {
       return (
         <URIForm onSubmit={this.handleSubmit}>
           <input
-            style={{ margin: "10px" }}
+            style={{ height: "24px", marginRight: "5px" }}
             type="text"
             name="lastname"
             onChange={evt => this.setState({ draftURI: evt.target.value })}
