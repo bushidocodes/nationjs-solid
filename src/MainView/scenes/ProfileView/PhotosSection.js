@@ -15,7 +15,6 @@ const SectionBody = styled.div`
 
 const SectionHeader = styled.div`
   background-color: #f5f6f7;
-  text-align: left;
   padding-left: 12px;
   padding-right: 12px;
   border-bottom: solid 1px #d3d6db;

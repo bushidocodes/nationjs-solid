@@ -7,7 +7,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 const AppWrapper = styled.div`
   height: 100%;
-  /* text-align: center; */
   display: grid;
   grid-template-rows: 43px 1fr;
   grid-template-columns: 100%;
