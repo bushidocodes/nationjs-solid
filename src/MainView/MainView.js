@@ -4,10 +4,10 @@ import { Route, Switch } from "react-router-dom";
 import About from "./scenes/About";
 import NavBar from "./components/NavBar";
 import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
-import TimelineSection from "./scenes/ProfileView/TimelineSection";
+// import TimelineSection from "./scenes/ProfileView/TimelineSection";
 import FriendsSection from "./scenes/ProfileView/FriendsSection";
 import AboutSection from "./scenes/ProfileView/AboutSection";
-import PhotosSection from "./scenes/ProfileView/PhotosSection";
+// import PhotosSection from "./scenes/ProfileView/PhotosSection";
 
 const MainContent = styled.div`
   height: 100%;
@@ -48,7 +48,7 @@ class MainView extends Component {
                   <Fragment>
                     <TimelineTopSection webid={webid} />
                     <Switch>
-                      <Route
+                      {/* <Route
                         path="/:webid/"
                         exact
                         render={({
@@ -56,9 +56,9 @@ class MainView extends Component {
                             params: { webid }
                           }
                         }) => <TimelineSection webid={webid} />}
-                      />
+                      /> */}
                       <Route
-                        path="/:webid/about/"
+                        path="/:webid/"
                         exact
                         render={({
                           match: {
@@ -75,7 +75,7 @@ class MainView extends Component {
                           }
                         }) => <FriendsSection webid={webid} />}
                       />
-                      <Route
+                      {/* <Route
                         path="/:webid/photos/"
                         exact
                         render={({
@@ -83,7 +83,7 @@ class MainView extends Component {
                             params: { webid }
                           }
                         }) => <PhotosSection webid={webid} />}
-                      />
+                      /> */}
                     </Switch>
                   </Fragment>
                 )}

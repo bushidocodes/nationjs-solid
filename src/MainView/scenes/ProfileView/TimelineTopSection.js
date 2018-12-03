@@ -19,7 +19,6 @@ const AvatarReal = styled.div`
 `;
 
 const SectionHeader = styled.div`
-  /* background-color: #f5f6f7; */
   background-color: white;
   border: solid 1px #ccd0d5;
   border-radius: 3px;
@@ -79,18 +78,18 @@ class TimelineTopSection extends Component {
         </div>
         <div style={{ backgroundColor: "white", height: "43px" }}>
           <SectionHeader>
-            <Link to={`/${this.props.webid}/`}>
+            {/* <Link to={`/${this.props.webid}/`}>
               <SectionHeaderItem>Timeline</SectionHeaderItem>
-            </Link>
-            <Link to={`/${this.props.webid}/about/`}>
+            </Link> */}
+            <Link to={`/${this.props.webid}/`}>
               <SectionHeaderItem>About</SectionHeaderItem>
             </Link>
             <Link to={`/${this.props.webid}/friends/`}>
               <SectionHeaderItem>Friends</SectionHeaderItem>
             </Link>
-            <Link to={`/${this.props.webid}/photos/`}>
+            {/* <Link to={`/${this.props.webid}/photos/`}>
               <SectionHeaderItem>Photos</SectionHeaderItem>
-            </Link>
+            </Link> */}
           </SectionHeader>
         </div>
       </div>
