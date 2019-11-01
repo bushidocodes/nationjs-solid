@@ -64,12 +64,12 @@ class FriendsSection extends Component {
           container={items => <FriendGrid>{items}</FriendGrid>}
           children={(elem, index) => {
             return (
-              <Link key={index} to={`/${encodeURIComponent(elem.id)}`}>
+              <Link key={index} to={`/${encodeURIComponent(elem)}`}>
                 <FriendGridItem>
-                  <FriendImage src={`[${elem.id}].image`} />
+                  <FriendImage src={`[${elem}].image`} />
                   <FriendName>
                     <Text>
-                      <Value src={`[${elem.id}].name`} />
+                      <Value src={`[${elem}].name`} />
                     </Text>
                   </FriendName>
                 </FriendGridItem>

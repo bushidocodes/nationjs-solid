@@ -1,28 +1,13 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import logo from "./logo.svg";
-import { AuthButton } from "@solid/react";
 import styled from "styled-components";
-import ProfileBadge from "./ProfileBadge";
+// import ProfileBadge from "./ProfileBadge";
 import NavBarField from "./NavBarField";
 
 const Icon = styled.img`
   height: 35px;
   width: 35px;
-  align-self: center;
-`;
-
-const StyledLogOutButton = styled(AuthButton)`
-  background-color: #3578e5;
-  border-radius: 4px;
-  border-style: solid;
-  border-width: 1px;
-  color: #fff;
-  height: 24px;
-  width: 80px;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: sans-serif;
   align-self: center;
 `;
 
@@ -66,8 +51,7 @@ class NavBar extends Component {
             <Icon src={logo} alt="logo" />
           </Link>
           <NavBarField webid={this.props.webid} key={this.props.webid || ""} />
-          <ProfileBadge />
-          <StyledLogOutButton popup="/popup.html" />
+          {/* <ProfileBadge /> */}
         </NavBarWrapper>
       );
     }

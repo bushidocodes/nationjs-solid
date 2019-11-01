@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { LoggedIn, LoggedOut } from "@solid/react";
 import styled from "styled-components";
-import Login from "./LogIn/Login";
 import MainView from "./MainView";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -17,12 +15,7 @@ class App extends Component {
     return (
       <Router>
         <AppWrapper>
-          <LoggedIn style={{ textAlign: "left" }}>
             <MainView />
-          </LoggedIn>
-          <LoggedOut>
-            <Login />
-          </LoggedOut>
         </AppWrapper>
       </Router>
     );

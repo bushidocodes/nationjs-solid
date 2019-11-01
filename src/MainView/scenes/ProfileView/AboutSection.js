@@ -28,8 +28,8 @@ const SubSectionHeader = styled.h4`
 `;
 
 const renderLinkedLI = (elem, index) => (
-  <a href={elem.id}>
-    <li key={index}>{elem.id}</li>
+  <a key={index} href={elem}>
+    <li>{`${elem}`}</li>
   </a>
 );
 
@@ -44,16 +44,12 @@ function AboutSection({ webid }) {
         <SubSectionHeader>Biographic Data</SubSectionHeader>
         <ul>
           <li>
-            First Name:
+            First Name: 
             <Value src={`[${decodedWebID}].firstName`} />
           </li>
           <li>
-            Last Name:
-            <Value src={`[${decodedWebID}].familyName`} />
-          </li>
-          <li>
-            Nickname:
-            <Value src={`[${decodedWebID}].nick`} />
+            Last Name: 
+            <Value src={`[${decodedWebID}].lastName`} />
           </li>
           <li>
             Birthday:
@@ -70,30 +66,26 @@ function AboutSection({ webid }) {
         </ul>
         <SubSectionHeader>Pages</SubSectionHeader>
         <ul>
-          <List
+          {/* <List
             src={`[${decodedWebID}].weblog`}
-            container={items => items}
             children={renderLinkedLI}
-          />
+          /> */}
           <List
             src={`[${decodedWebID}].homepage`}
-            container={items => items}
             children={renderLinkedLI}
           />
           <List
             src={`[${decodedWebID}].page`}
-            container={items => items}
             children={renderLinkedLI}
           />
           <List
             src={`[${decodedWebID}].publications`}
-            container={items => items}
             children={renderLinkedLI}
-          />
+            />
           <List
             src={`[${decodedWebID}].account`}
-            container={items => items}
             children={renderLinkedLI}
+            // children={renderAccount}
           />
         </ul>
         <SubSectionHeader>Source Data</SubSectionHeader>
