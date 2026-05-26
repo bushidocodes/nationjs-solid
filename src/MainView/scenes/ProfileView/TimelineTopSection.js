@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Value, Image } from "@solid/react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
+import { useProfile } from "../../../hooks/useProfile";
 
 const AvatarReal = styled.div`
   position: absolute;
@@ -13,9 +13,10 @@ const AvatarReal = styled.div`
   border: 6px solid white;
   border-radius: 90px;
   overflow: hidden;
-  * {
+  img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -40,12 +41,23 @@ const SectionHeaderItem = styled.div`
   border: 1px solid ${colors.borderGrayLighter};
 `;
 
-class TimelineTopSection extends Component {
-  render() {
-    return (
-      <div>
+function TimelineTopSection({ webid }) {
+  const decodedWebId = decodeURIComponent(webid);
+  const { profile } = useProfile(decodedWebId);
+
+  return (
+    <div>
+      <div
+        style={{
+          height: "315px",
+          backgroundColor: "#cc0000",
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
         <div
           style={{
+<<<<<<< HEAD
             height: sizes.profileHeroHeight,
             backgroundColor: colors.profileHero,
             display: "flex",
@@ -92,10 +104,45 @@ class TimelineTopSection extends Component {
               <SectionHeaderItem>Photos</SectionHeaderItem>
             </Link> */}
           </SectionHeader>
+=======
+            alignSelf: "flex-end",
+            width: "168px",
+            position: "relative",
+            marginLeft: "20px",
+          }}
+        >
+          <AvatarReal>
+            {profile?.image && (
+              <img src={profile.image} alt={profile.name || "avatar"} />
+            )}
+          </AvatarReal>
+        </div>
+        <div
+          style={{
+            color: "white",
+            marginLeft: "20px",
+            marginBottom: "20px",
+            fontWeight: "bold",
+            alignSelf: "flex-end",
+            fontSize: "24px",
+          }}
+        >
+          {profile?.name || decodedWebId}
+>>>>>>> 5880cb1 (feat: migrate auth + data layer from @solid/react to Inrupt SDK)
         </div>
       </div>
-    );
-  }
+      <div style={{ backgroundColor: "white", height: "43px" }}>
+        <SectionHeader>
+          <Link to={`/${webid}/`}>
+            <SectionHeaderItem>About</SectionHeaderItem>
+          </Link>
+          <Link to={`/${webid}/friends/`}>
+            <SectionHeaderItem>Friends</SectionHeaderItem>
+          </Link>
+        </SectionHeader>
+      </div>
+    </div>
+  );
 }
 
 export default TimelineTopSection;

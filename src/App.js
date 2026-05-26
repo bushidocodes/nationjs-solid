@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { LoggedIn, LoggedOut } from "@solid/react";
+import React from "react";
 import styled from "styled-components";
 import Login from "./LogIn/Login";
 import MainView from "./MainView";
 import { BrowserRouter as Router } from "react-router-dom";
 import { sizes } from "./theme";
+import { useAuth } from "./context/AuthContext";
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -13,21 +13,15 @@ const AppWrapper = styled.div`
   grid-template-columns: 100%;
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <AppWrapper>
-          <LoggedIn style={{ textAlign: "left" }}>
-            <MainView />
-          </LoggedIn>
-          <LoggedOut>
-            <Login />
-          </LoggedOut>
-        </AppWrapper>
-      </Router>
-    );
-  }
+function App() {
+  const { isLoggedIn } = useAuth();
+  return (
+    <Router>
+      <AppWrapper>
+        {isLoggedIn ? <MainView /> : <Login />}
+      </AppWrapper>
+    </Router>
+  );
 }
 
 export default App;
