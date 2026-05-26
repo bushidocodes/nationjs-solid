@@ -1,30 +1,27 @@
 import React, { Component, Fragment } from "react";
 import { AuthButton } from "@solid/react";
 import styled from "styled-components";
+import { colors, sizes } from "../theme";
 
-const NavBar = styled.div`
-  background-color: #4267b2;
-  color: #fff;
-  height: 43px;
+const NavBarBase = styled.div`
+  background-color: ${colors.brandBlue};
+  color: ${colors.white};
+  height: ${sizes.navbarHeight};
   display: flex;
   justify-content: space-between;
 `;
-const NavBarLoggedOut = styled(NavBar)`
-  background-color: #4267b2;
-  color: #fff;
-  height: 43px;
-  display: flex;
+const NavBarLoggedOut = styled(NavBarBase)`
   justify-content: center;
 `;
 
 const MainContent = styled.div`
   height: 100%;
-  background-color: #e9ebee;
+  background-color: ${colors.backgroundGray};
 `;
 
 const MainContentCenterLoggedOut = styled.div`
   padding-top: 12px;
-  width: 416px;
+  width: ${sizes.loginFormWidth};
   margin: auto;
 `;
 
@@ -33,11 +30,11 @@ const Logo = styled.h1`
 `;
 
 const StyledLogInButton = styled(AuthButton)`
-  background-color: #3578e5;
+  background-color: ${colors.actionBlue};
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
-  color: #fff;
+  color: ${colors.white};
   height: 36px;
   line-height: 36px;
   width: 100%;

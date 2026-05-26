@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
+import { colors, sizes } from "../../../theme";
 
 const StyledSubmit = styled.input`
-  background-color: #3578e5;
+  background-color: ${colors.actionBlue};
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
-  color: #fff;
+  color: ${colors.white};
   height: 24px;
   width: 75px;
   font-size: 14px;
@@ -18,7 +19,7 @@ const StyledSubmit = styled.input`
 `;
 
 const URIForm = styled.form`
-  height: 43px;
+  height: ${sizes.navbarHeight};
   display: grid;
   grid-template-columns: 1fr 80px;
   align-content: center;

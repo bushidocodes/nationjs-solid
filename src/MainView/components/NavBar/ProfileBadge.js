@@ -2,9 +2,10 @@ import React from "react";
 import { withWebId, Image, Value } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { colors, sizes } from "../../../theme";
 
 const ProfileBadgeWrapper = styled.div`
-  height: 43px;
+  height: ${sizes.navbarHeight};
   display: flex;
   flex-direction: row;
   justify-items: space-between;
@@ -25,7 +26,7 @@ const MiniAvatar = styled.div`
 `;
 
 const Text = styled.span`
-  color: white;
+  color: ${colors.white};
   font-weight: bold;
   text-decoration: none;
 `;

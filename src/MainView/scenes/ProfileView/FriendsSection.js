@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Value, Image, List } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { colors } from "../../../theme";
 
 const FriendGrid = styled.div`
   display: grid;
@@ -17,7 +18,7 @@ const FriendGridItem = styled.div`
   grid-template-columns: 100px 1fr;
   grid-template-rows: 1fr;
   height: 100px;
-  border: solid 1px #ccd0d5;
+  border: solid 1px ${colors.borderGray};
   border-radius: 3px;
 `;
 
@@ -27,19 +28,19 @@ const FriendImage = styled(Image)`
 `;
 
 const FriendsSectionWrapper = styled.div`
-  background-color: white;
+  background-color: ${colors.white};
   margin-top: 12px;
   display: flex;
   flex-direction: column;
-  border: solid 1px #d3d6db;
+  border: solid 1px ${colors.borderGrayLight};
 `;
 
 const SectionHeader = styled.div`
-  background-color: #f5f6f7;
+  background-color: ${colors.surfaceGray};
   text-align: left;
   padding-left: 12px;
   padding-right: 12px;
-  border-bottom: solid 1px #d3d6db;
+  border-bottom: solid 1px ${colors.borderGrayLight};
 `;
 
 const FriendName = styled.div`

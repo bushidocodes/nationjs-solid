@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
+import { sizes } from "../theme";
 import About from "./scenes/About";
 import NavBar from "./components/NavBar";
 import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
@@ -14,7 +15,7 @@ const MainContent = styled.div`
 `;
 
 const MainContentCenterLoggedIn = styled.div`
-  width: 951px;
+  width: ${sizes.contentWidth};
   margin: auto;
 `;
 

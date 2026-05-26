@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Value, Image } from "@solid/react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { colors, sizes } from "../../../theme";
 
 const AvatarReal = styled.div`
   position: absolute;
@@ -19,12 +20,12 @@ const AvatarReal = styled.div`
 `;
 
 const SectionHeader = styled.div`
-  background-color: white;
-  border: solid 1px #ccd0d5;
+  background-color: ${colors.white};
+  border: solid 1px ${colors.borderGray};
   border-radius: 3px;
   display: flex;
   flex-direction: row;
-  height: 43px;
+  height: ${sizes.navbarHeight};
   padding-left: 201px;
 `;
 
@@ -36,7 +37,7 @@ const SectionHeaderItem = styled.div`
   font-weight: 600;
   padding-left: 17px;
   padding-right: 17px;
-  border: 1px solid #e9eaed;
+  border: 1px solid ${colors.borderGrayLighter};
 `;
 
 class TimelineTopSection extends Component {
@@ -45,8 +46,8 @@ class TimelineTopSection extends Component {
       <div>
         <div
           style={{
-            height: "315px",
-            backgroundColor: "red",
+            height: sizes.profileHeroHeight,
+            backgroundColor: colors.profileHero,
             display: "flex",
             flexDirection: "row",
           }}
@@ -54,7 +55,7 @@ class TimelineTopSection extends Component {
           <div
             style={{
               alignSelf: "flex-end",
-              width: "168px",
+              width: sizes.avatarSize,
               position: "relative",
               marginLeft: "20px",
             }}
@@ -76,7 +77,7 @@ class TimelineTopSection extends Component {
             <Value src={`[${decodeURIComponent(this.props.webid)}].name`} />
           </div>
         </div>
-        <div style={{ backgroundColor: "white", height: "43px" }}>
+        <div style={{ backgroundColor: colors.white, height: sizes.navbarHeight }}>
           <SectionHeader>
             {/* <Link to={`/${this.props.webid}/`}>
               <SectionHeaderItem>Timeline</SectionHeaderItem>
