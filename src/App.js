@@ -4,11 +4,12 @@ import styled from "styled-components";
 import Login from "./LogIn/Login";
 import MainView from "./MainView";
 import { BrowserRouter as Router } from "react-router-dom";
+import { sizes } from "./theme";
 
 const AppWrapper = styled.div`
   height: 100%;
   display: grid;
-  grid-template-rows: 43px 1fr;
+  grid-template-rows: ${sizes.navbarHeight} 1fr;
   grid-template-columns: 100%;
 `;
 

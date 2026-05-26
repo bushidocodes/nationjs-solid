@@ -5,6 +5,7 @@ import { AuthButton } from "@solid/react";
 import styled from "styled-components";
 import ProfileBadge from "./ProfileBadge";
 import NavBarField from "./NavBarField";
+import { colors, sizes } from "../../../theme";
 
 const Icon = styled.img`
   height: 35px;
@@ -13,11 +14,11 @@ const Icon = styled.img`
 `;
 
 const StyledLogOutButton = styled(AuthButton)`
-  background-color: #3578e5;
+  background-color: ${colors.actionBlue};
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
-  color: #fff;
+  color: ${colors.white};
   height: 24px;
   width: 80px;
   font-size: 14px;
@@ -29,12 +30,12 @@ const StyledLogOutButton = styled(AuthButton)`
 const NavBarWrapper = styled.div`
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #4267b2;
-  color: #fff;
-  height: 43px;
+  background-color: ${colors.brandBlue};
+  color: ${colors.white};
+  height: ${sizes.navbarHeight};
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 43px 1fr auto 100px;
+  grid-template-columns: ${sizes.navbarHeight} 1fr auto 100px;
   grid-gap: 20px;
 `;
 
