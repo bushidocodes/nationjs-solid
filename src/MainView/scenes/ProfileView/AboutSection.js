@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { List, Value } from "@solid/react";
-import { colors } from "../../../../theme";
+import { colors } from "../../../theme";
 
 const SectionWrapper = styled.div`
   background-color: ${colors.white};

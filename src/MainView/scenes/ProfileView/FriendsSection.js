@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Value, Image, List } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { colors } from "../../../../theme";
+import { colors } from "../../../theme";
 
 const FriendGrid = styled.div`
   display: grid;

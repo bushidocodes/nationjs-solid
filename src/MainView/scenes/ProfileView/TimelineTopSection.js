@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Value, Image } from "@solid/react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { colors, sizes } from "../../../../theme";
+import { colors, sizes } from "../../../theme";
 
 const AvatarReal = styled.div`
   position: absolute;

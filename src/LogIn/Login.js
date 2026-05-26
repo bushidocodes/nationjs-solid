@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { AuthButton } from "@solid/react";
 import styled from "styled-components";
-import { colors, sizes } from "../../theme";
+import { colors, sizes } from "../theme";
 
 const NavBarBase = styled.div`
   background-color: ${colors.brandBlue};
