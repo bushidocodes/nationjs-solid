@@ -41,9 +41,9 @@ const NavBarWrapper = styled.div`
 class NavBar extends Component {
   state = {
     draftURI: this.props.webid ? decodeURIComponent(this.props.webid) : "",
-    shouldRedirect: false
+    shouldRedirect: false,
   };
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     this.setState({ shouldRedirect: true });
   };
@@ -59,7 +59,7 @@ class NavBar extends Component {
               display: "grid",
               gridTemplateColumns: "1fr",
               gridTemplateRows: "1fr",
-              alignContent: "center"
+              alignContent: "center",
             }}
             to="/"
           >

@@ -28,8 +28,8 @@ class MainView extends Component {
             path="/:webid"
             render={({
               match: {
-                params: { webid }
-              }
+                params: { webid },
+              },
             }) => <NavBar webid={webid || ""} />}
           />
           <Route path="/" exact render={() => <NavBar webid="" />} />
@@ -42,8 +42,8 @@ class MainView extends Component {
                 path="/:webid"
                 render={({
                   match: {
-                    params: { webid }
-                  }
+                    params: { webid },
+                  },
                 }) => (
                   <Fragment>
                     <TimelineTopSection webid={webid} />
@@ -62,8 +62,8 @@ class MainView extends Component {
                         exact
                         render={({
                           match: {
-                            params: { webid }
-                          }
+                            params: { webid },
+                          },
                         }) => <AboutSection webid={webid} />}
                       />
                       <Route
@@ -71,8 +71,8 @@ class MainView extends Component {
                         exact
                         render={({
                           match: {
-                            params: { webid }
-                          }
+                            params: { webid },
+                          },
                         }) => <FriendsSection webid={webid} />}
                       />
                       {/* <Route

@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default () => (
+function About() {
+  return (
   <div>
     <h1>About</h1>
     <p>
       This project is an attempt to replicate the familiar experience of social
       networking using the Solid framework. Solid is led by Sir Tim Berners-Lee
       and his merry band of researchers. It is an abbreviated portmanteau of
-      'Social' and 'Linked Data,' the semantic web concept that enables web apps
+      &apos;Social&apos; and &apos;Linked Data,&apos; the semantic web concept that enables web apps
       to assemble a social graph from structured data decentralized across the
       world wide web.
     </p>
@@ -31,4 +32,7 @@ export default () => (
       </Link>
     </ul>
   </div>
-);
+  );
+}
+
+export default About;
