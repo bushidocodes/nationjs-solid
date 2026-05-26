@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const SectionWrapper = styled.div`
@@ -20,17 +20,15 @@ const SectionHeader = styled.div`
   border-bottom: solid 1px #d3d6db;
 `;
 
-class PhotosSection extends Component {
-  render() {
-    return (
-      <SectionWrapper>
-        <SectionHeader>
-          <h3>Photos</h3>
-        </SectionHeader>
-        <SectionBody>Under Construction!</SectionBody>
-      </SectionWrapper>
-    );
-  }
+function PhotosSection() {
+  return (
+    <SectionWrapper>
+      <SectionHeader>
+        <h3>Photos</h3>
+      </SectionHeader>
+      <SectionBody>Under Construction!</SectionBody>
+    </SectionWrapper>
+  );
 }
 
 export default PhotosSection;

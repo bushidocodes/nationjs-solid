@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const SectionWrapper = styled.div`
@@ -20,20 +20,18 @@ const SectionHeader = styled.div`
   border-bottom: solid 1px #d3d6db;
 `;
 
-class TimelineSection extends Component {
-  render() {
-    return (
-      <SectionWrapper>
-        <SectionHeader>
-          <h3>Timeline</h3>
-        </SectionHeader>
-        <SectionBody>
-          Under Construction! This would the Activity Streams Outbox of the
-          selected person
-        </SectionBody>
-      </SectionWrapper>
-    );
-  }
+function TimelineSection() {
+  return (
+    <SectionWrapper>
+      <SectionHeader>
+        <h3>Timeline</h3>
+      </SectionHeader>
+      <SectionBody>
+        Under Construction! This would the Activity Streams Outbox of the
+        selected person
+      </SectionBody>
+    </SectionWrapper>
+  );
 }
 
 export default TimelineSection;

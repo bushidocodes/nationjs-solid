@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
 
@@ -16,6 +16,7 @@ const StyledSubmit = styled.input`
   font-family: sans-serif;
   align-self: center;
   margin-right: 10px;
+  cursor: pointer;
 `;
 
 const URIForm = styled.form`
@@ -23,39 +24,30 @@ const URIForm = styled.form`
   display: grid;
   grid-template-columns: 1fr 80px;
   align-content: center;
-  /* * {
-    margin: 10px;
-  } */
 `;
 
-class NavBar extends Component {
-  state = {
-    draftURI: this.props.webid ? decodeURIComponent(this.props.webid) : "",
-    shouldRedirect: false,
+function NavBarField({ webid }) {
+  const navigate = useNavigate();
+  const [draftURI, setDraftURI] = useState(
+    webid ? decodeURIComponent(webid) : ""
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/${encodeURIComponent(draftURI)}`);
   };
-  handleSubmit = (evt) => {
-    evt.preventDefault();
-    this.setState({ shouldRedirect: true });
-  };
-  render = () => {
-    if (this.state.shouldRedirect === true) {
-      this.setState({ shouldRedirect: false });
-      return <Redirect to={`/${encodeURIComponent(this.state.draftURI)}`} />;
-    } else {
-      return (
-        <URIForm onSubmit={this.handleSubmit}>
-          <input
-            style={{ height: "24px", marginRight: "5px" }}
-            type="text"
-            name="lastname"
-            onChange={(evt) => this.setState({ draftURI: evt.target.value })}
-            value={this.state.draftURI}
-          />
-          <StyledSubmit type="submit" value="View" />
-        </URIForm>
-      );
-    }
-  };
+
+  return (
+    <URIForm onSubmit={handleSubmit}>
+      <input
+        style={{ height: "24px", marginRight: "5px" }}
+        type="text"
+        onChange={(e) => setDraftURI(e.target.value)}
+        value={draftURI}
+      />
+      <StyledSubmit type="submit" value="View" />
+    </URIForm>
+  );
 }
 
-export default NavBar;
+export default NavBarField;

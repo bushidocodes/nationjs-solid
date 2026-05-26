@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import logo from "./logo.svg";
 import styled from "styled-components";
 import ProfileBadge from "./ProfileBadge";
@@ -40,7 +40,8 @@ const NavBarWrapper = styled.div`
   grid-gap: 20px;
 `;
 
-function NavBar({ webid }) {
+function NavBar() {
+  const { webid = "" } = useParams();
   const { logout } = useAuth();
   return (
     <NavBarWrapper>
@@ -55,7 +56,7 @@ function NavBar({ webid }) {
       >
         <Icon src={logo} alt="logo" />
       </Link>
-      <NavBarField webid={webid} key={webid || ""} />
+      <NavBarField webid={webid} key={webid} />
       <ProfileBadge />
       <LogOutButton onClick={logout}>Log out</LogOutButton>
     </NavBarWrapper>

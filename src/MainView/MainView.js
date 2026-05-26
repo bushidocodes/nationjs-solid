@@ -1,100 +1,52 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Route, Switch } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { sizes } from "../theme";
 import About from "./scenes/About";
 import NavBar from "./components/NavBar";
 import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
-// import TimelineSection from "./scenes/ProfileView/TimelineSection";
 import FriendsSection from "./scenes/ProfileView/FriendsSection";
 import AboutSection from "./scenes/ProfileView/AboutSection";
-// import PhotosSection from "./scenes/ProfileView/PhotosSection";
 
 const MainContent = styled.div`
   height: 100%;
 `;
 
-const MainContentCenterLoggedIn = styled.div`
+const MainContentCenter = styled.div`
   width: ${sizes.contentWidth};
   margin: auto;
 `;
 
-class MainView extends Component {
-  render() {
-    // I've added a key to NavBar to blow away draft state on navigation. https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key
-    return (
-      <Fragment>
-        <Switch>
-          <Route
-            path="/:webid"
-            render={({
-              match: {
-                params: { webid },
-              },
-            }) => <NavBar webid={webid || ""} />}
-          />
-          <Route path="/" exact render={() => <NavBar webid="" />} />
-        </Switch>
-        <MainContent>
-          <MainContentCenterLoggedIn>
-            <Switch>
-              <Route path="/" exact component={About} />
-              <Route
-                path="/:webid"
-                render={({
-                  match: {
-                    params: { webid },
-                  },
-                }) => (
-                  <Fragment>
-                    <TimelineTopSection webid={webid} />
-                    <Switch>
-                      {/* <Route
-                        path="/:webid/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid }
-                          }
-                        }) => <TimelineSection webid={webid} />}
-                      /> */}
-                      <Route
-                        path="/:webid/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid },
-                          },
-                        }) => <AboutSection webid={webid} />}
-                      />
-                      <Route
-                        path="/:webid/friends/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid },
-                          },
-                        }) => <FriendsSection webid={webid} />}
-                      />
-                      {/* <Route
-                        path="/:webid/photos/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid }
-                          }
-                        }) => <PhotosSection webid={webid} />}
-                      /> */}
-                    </Switch>
-                  </Fragment>
-                )}
-              />
-            </Switch>
-          </MainContentCenterLoggedIn>
-        </MainContent>
-      </Fragment>
-    );
-  }
+function ProfileRoutes() {
+  const { webid } = useParams();
+  return (
+    <>
+      <TimelineTopSection webid={webid} />
+      <Routes>
+        <Route path="/" element={<AboutSection webid={webid} />} />
+        <Route path="/friends/" element={<FriendsSection webid={webid} />} />
+      </Routes>
+    </>
+  );
+}
+
+function MainView() {
+  return (
+    <>
+      <Routes>
+        <Route path="/:webid/*" element={<NavBar />} />
+        <Route path="/" element={<NavBar />} />
+      </Routes>
+      <MainContent>
+        <MainContentCenter>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/:webid/*" element={<ProfileRoutes />} />
+          </Routes>
+        </MainContentCenter>
+      </MainContent>
+    </>
+  );
 }
 
 export default MainView;
