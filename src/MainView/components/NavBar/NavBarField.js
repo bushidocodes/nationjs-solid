@@ -30,9 +30,9 @@ const URIForm = styled.form`
 class NavBar extends Component {
   state = {
     draftURI: this.props.webid ? decodeURIComponent(this.props.webid) : "",
-    shouldRedirect: false
+    shouldRedirect: false,
   };
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     this.setState({ shouldRedirect: true });
   };
@@ -47,7 +47,7 @@ class NavBar extends Component {
             style={{ height: "24px", marginRight: "5px" }}
             type="text"
             name="lastname"
-            onChange={evt => this.setState({ draftURI: evt.target.value })}
+            onChange={(evt) => this.setState({ draftURI: evt.target.value })}
             value={this.state.draftURI}
           />
           <StyledSubmit type="submit" value="View" />

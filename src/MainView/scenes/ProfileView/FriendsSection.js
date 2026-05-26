@@ -61,22 +61,21 @@ class FriendsSection extends Component {
         </SectionHeader>
         <List
           src={`[${decodeURIComponent(this.props.webid)}].friends`}
-          container={items => <FriendGrid>{items}</FriendGrid>}
-          children={(elem, index) => {
-            return (
-              <Link key={index} to={`/${encodeURIComponent(elem.id)}`}>
-                <FriendGridItem>
-                  <FriendImage src={`[${elem.id}].image`} />
-                  <FriendName>
-                    <Text>
-                      <Value src={`[${elem.id}].name`} />
-                    </Text>
-                  </FriendName>
-                </FriendGridItem>
-              </Link>
-            );
-          }}
-        />
+          container={(items) => <FriendGrid>{items}</FriendGrid>}
+        >
+          {(elem, index) => (
+            <Link key={index} to={`/${encodeURIComponent(elem.id)}`}>
+              <FriendGridItem>
+                <FriendImage src={`[${elem.id}].image`} />
+                <FriendName>
+                  <Text>
+                    <Value src={`[${elem.id}].name`} />
+                  </Text>
+                </FriendName>
+              </FriendGridItem>
+            </Link>
+          )}
+        </List>
       </FriendsSectionWrapper>
     );
   }

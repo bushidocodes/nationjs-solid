@@ -70,31 +70,21 @@ function AboutSection({ webid }) {
         </ul>
         <SubSectionHeader>Pages</SubSectionHeader>
         <ul>
-          <List
-            src={`[${decodedWebID}].weblog`}
-            container={items => items}
-            children={renderLinkedLI}
-          />
-          <List
-            src={`[${decodedWebID}].homepage`}
-            container={items => items}
-            children={renderLinkedLI}
-          />
-          <List
-            src={`[${decodedWebID}].page`}
-            container={items => items}
-            children={renderLinkedLI}
-          />
-          <List
-            src={`[${decodedWebID}].publications`}
-            container={items => items}
-            children={renderLinkedLI}
-          />
-          <List
-            src={`[${decodedWebID}].account`}
-            container={items => items}
-            children={renderLinkedLI}
-          />
+          <List src={`[${decodedWebID}].weblog`} container={(items) => items}>
+            {renderLinkedLI}
+          </List>
+          <List src={`[${decodedWebID}].homepage`} container={(items) => items}>
+            {renderLinkedLI}
+          </List>
+          <List src={`[${decodedWebID}].page`} container={(items) => items}>
+            {renderLinkedLI}
+          </List>
+          <List src={`[${decodedWebID}].publications`} container={(items) => items}>
+            {renderLinkedLI}
+          </List>
+          <List src={`[${decodedWebID}].account`} container={(items) => items}>
+            {renderLinkedLI}
+          </List>
         </ul>
         <SubSectionHeader>Source Data</SubSectionHeader>
         <ul>

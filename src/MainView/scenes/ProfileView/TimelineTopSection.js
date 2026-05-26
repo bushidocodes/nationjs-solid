@@ -48,7 +48,7 @@ class TimelineTopSection extends Component {
             height: "315px",
             backgroundColor: "red",
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
           }}
         >
           <div
@@ -56,7 +56,7 @@ class TimelineTopSection extends Component {
               alignSelf: "flex-end",
               width: "168px",
               position: "relative",
-              marginLeft: "20px"
+              marginLeft: "20px",
             }}
           >
             <AvatarReal>
@@ -70,7 +70,7 @@ class TimelineTopSection extends Component {
               marginBottom: "20px",
               fontWeight: "bold",
               alignSelf: "flex-end",
-              fontSize: "24px"
+              fontSize: "24px",
             }}
           >
             <Value src={`[${decodeURIComponent(this.props.webid)}].name`} />
