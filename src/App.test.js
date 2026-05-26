@@ -1,6 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { describe, it, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { describe, it, vi, expect } from "vitest";
 
 vi.mock("./context/AuthContext", () => ({
   useAuth: () => ({ isLoggedIn: false, webId: null, login: vi.fn(), logout: vi.fn() }),
