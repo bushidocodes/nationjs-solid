@@ -49,64 +49,16 @@ function TimelineTopSection({ webid }) {
     <div>
       <div
         style={{
-          height: "315px",
-          backgroundColor: "#cc0000",
+          height: sizes.profileHeroHeight,
+          backgroundColor: colors.profileHero,
           display: "flex",
           flexDirection: "row",
         }}
       >
         <div
           style={{
-<<<<<<< HEAD
-            height: sizes.profileHeroHeight,
-            backgroundColor: colors.profileHero,
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <div
-            style={{
-              alignSelf: "flex-end",
-              width: sizes.avatarSize,
-              position: "relative",
-              marginLeft: "20px",
-            }}
-          >
-            <AvatarReal>
-              <Image src={`[${decodeURIComponent(this.props.webid)}].image`} />
-            </AvatarReal>
-          </div>
-          <div
-            style={{
-              color: "white",
-              marginLeft: "20px",
-              marginBottom: "20px",
-              fontWeight: "bold",
-              alignSelf: "flex-end",
-              fontSize: "24px",
-            }}
-          >
-            <Value src={`[${decodeURIComponent(this.props.webid)}].name`} />
-          </div>
-        </div>
-        <div style={{ backgroundColor: colors.white, height: sizes.navbarHeight }}>
-          <SectionHeader>
-            {/* <Link to={`/${this.props.webid}/`}>
-              <SectionHeaderItem>Timeline</SectionHeaderItem>
-            </Link> */}
-            <Link to={`/${this.props.webid}/`}>
-              <SectionHeaderItem>About</SectionHeaderItem>
-            </Link>
-            <Link to={`/${this.props.webid}/friends/`}>
-              <SectionHeaderItem>Friends</SectionHeaderItem>
-            </Link>
-            {/* <Link to={`/${this.props.webid}/photos/`}>
-              <SectionHeaderItem>Photos</SectionHeaderItem>
-            </Link> */}
-          </SectionHeader>
-=======
             alignSelf: "flex-end",
-            width: "168px",
+            width: sizes.avatarSize,
             position: "relative",
             marginLeft: "20px",
           }}
@@ -128,7 +80,6 @@ function TimelineTopSection({ webid }) {
           }}
         >
           {profile?.name || decodedWebId}
->>>>>>> 5880cb1 (feat: migrate auth + data layer from @solid/react to Inrupt SDK)
         </div>
       </div>
       <div style={{ backgroundColor: "white", height: "43px" }}>
