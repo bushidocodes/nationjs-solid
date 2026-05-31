@@ -1,9 +1,8 @@
-import React, { Component } from "react";
-
-import { Value, Image, List } from "@solid/react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { colors } from "../../../theme";
+import { useProfile } from "../../../hooks/useProfile";
 
 const FriendGrid = styled.div`
   display: grid;
@@ -20,11 +19,13 @@ const FriendGridItem = styled.div`
   height: 100px;
   border: solid 1px ${colors.borderGray};
   border-radius: 3px;
+  overflow: hidden;
 `;
 
-const FriendImage = styled(Image)`
+const FriendAvatar = styled.img`
   height: 100px;
   width: 100px;
+  object-fit: cover;
 `;
 
 const FriendsSectionWrapper = styled.div`
@@ -47,39 +48,44 @@ const FriendName = styled.div`
   align-self: center;
   margin-left: 15px;
   text-align: left;
-`;
-const Text = styled.span`
   font-weight: bold;
-  text-decoration: none;
 `;
 
-class FriendsSection extends Component {
-  render() {
-    return (
-      <FriendsSectionWrapper>
-        <SectionHeader>
-          <h3>Friends</h3>
-        </SectionHeader>
-        <List
-          src={`[${decodeURIComponent(this.props.webid)}].friends`}
-          container={(items) => <FriendGrid>{items}</FriendGrid>}
-        >
-          {(elem, index) => (
-            <Link key={index} to={`/${encodeURIComponent(elem.id)}`}>
-              <FriendGridItem>
-                <FriendImage src={`[${elem.id}].image`} />
-                <FriendName>
-                  <Text>
-                    <Value src={`[${elem.id}].name`} />
-                  </Text>
-                </FriendName>
-              </FriendGridItem>
-            </Link>
-          )}
-        </List>
-      </FriendsSectionWrapper>
-    );
-  }
+function FriendCard({ friendWebId }) {
+  const { profile } = useProfile(friendWebId);
+  return (
+    <Link to={`/${encodeURIComponent(friendWebId)}`}>
+      <FriendGridItem>
+        {profile?.image ? (
+          <FriendAvatar src={profile.image} alt={profile.name || ""} />
+        ) : (
+          <div style={{ width: 100, height: 100, backgroundColor: "#e9ebee" }} />
+        )}
+        <FriendName>{profile?.name || friendWebId}</FriendName>
+      </FriendGridItem>
+    </Link>
+  );
+}
+
+function FriendsSection({ webid }) {
+  const decodedWebId = decodeURIComponent(webid);
+  const { profile, loading } = useProfile(decodedWebId);
+
+  return (
+    <FriendsSectionWrapper>
+      <SectionHeader>
+        <h3>Friends</h3>
+      </SectionHeader>
+      {loading && <p style={{ padding: "10px" }}>Loading…</p>}
+      {profile?.friends?.length > 0 && (
+        <FriendGrid>
+          {profile.friends.map((friendUrl) => (
+            <FriendCard key={friendUrl} friendWebId={friendUrl} />
+          ))}
+        </FriendGrid>
+      )}
+    </FriendsSectionWrapper>
+  );
 }
 
 export default FriendsSection;

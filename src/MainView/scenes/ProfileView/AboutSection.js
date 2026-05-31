@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { List, Value } from "@solid/react";
 import { colors } from "../../../theme";
+import { useProfile } from "../../../hooks/useProfile";
 
 const SectionWrapper = styled.div`
   background-color: ${colors.white};
@@ -28,69 +28,60 @@ const SubSectionHeader = styled.h4`
   margin: 0px;
 `;
 
-const renderLinkedLI = (elem, index) => (
-  <a href={elem.id}>
-    <li key={index}>{elem.id}</li>
-  </a>
-);
-
 function AboutSection({ webid }) {
-  const decodedWebID = decodeURIComponent(webid);
+  const decodedWebId = decodeURIComponent(webid);
+  const { profile, loading } = useProfile(decodedWebId);
+
+  const bioFields = profile
+    ? [
+        { label: "First Name", value: profile.firstName },
+        { label: "Last Name", value: profile.familyName },
+        { label: "Nickname", value: profile.nick },
+        { label: "Birthday", value: profile.birthday },
+        { label: "Age", value: profile.age },
+        { label: "Gender", value: profile.gender },
+      ]
+    : [];
+
+  const pageFields = profile
+    ? [
+        ...profile.weblog,
+        ...profile.homepage,
+        ...profile.page,
+        ...profile.publications,
+        ...profile.account,
+      ]
+    : [];
+
   return (
     <SectionWrapper>
       <SectionHeader>
         <h3>About</h3>
       </SectionHeader>
       <SectionBody>
+        {loading && <p>Loading…</p>}
         <SubSectionHeader>Biographic Data</SubSectionHeader>
         <ul>
-          <li>
-            First Name:
-            <Value src={`[${decodedWebID}].firstName`} />
-          </li>
-          <li>
-            Last Name:
-            <Value src={`[${decodedWebID}].familyName`} />
-          </li>
-          <li>
-            Nickname:
-            <Value src={`[${decodedWebID}].nick`} />
-          </li>
-          <li>
-            Birthday:
-            <Value src={`[${decodedWebID}].birthday`} />
-          </li>
-          <li>
-            Age:
-            <Value src={`[${decodedWebID}].age`} />
-          </li>
-          <li>
-            Gender:
-            <Value src={`[${decodedWebID}].gender`} />
-          </li>
+          {bioFields.map(({ label, value }) =>
+            value ? (
+              <li key={label}>
+                {label}: {value}
+              </li>
+            ) : null
+          )}
         </ul>
         <SubSectionHeader>Pages</SubSectionHeader>
         <ul>
-          <List src={`[${decodedWebID}].weblog`} container={(items) => items}>
-            {renderLinkedLI}
-          </List>
-          <List src={`[${decodedWebID}].homepage`} container={(items) => items}>
-            {renderLinkedLI}
-          </List>
-          <List src={`[${decodedWebID}].page`} container={(items) => items}>
-            {renderLinkedLI}
-          </List>
-          <List src={`[${decodedWebID}].publications`} container={(items) => items}>
-            {renderLinkedLI}
-          </List>
-          <List src={`[${decodedWebID}].account`} container={(items) => items}>
-            {renderLinkedLI}
-          </List>
+          {pageFields.map((url) => (
+            <a href={url} key={url}>
+              <li>{url}</li>
+            </a>
+          ))}
         </ul>
         <SubSectionHeader>Source Data</SubSectionHeader>
         <ul>
-          <a href={decodedWebID}>
-            <li>{decodedWebID}</li>
+          <a href={decodedWebId}>
+            <li>{decodedWebId}</li>
           </a>
         </ul>
       </SectionBody>

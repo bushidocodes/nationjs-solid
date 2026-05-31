@@ -1,8 +1,9 @@
 import React from "react";
-import { withWebId, Image, Value } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { colors, sizes } from "../../../theme";
+import { useAuth } from "../../../context/AuthContext";
+import { useProfile } from "../../../hooks/useProfile";
 
 const ProfileBadgeWrapper = styled.div`
   height: ${sizes.navbarHeight};
@@ -19,9 +20,10 @@ const MiniAvatar = styled.div`
   overflow: hidden;
   align-self: center;
   margin-right: 10px;
-  * {
+  img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -31,18 +33,24 @@ const Text = styled.span`
   text-decoration: none;
 `;
 
-const ProfileBadge = ({ webId }) => (
-  <Link to={`/${encodeURIComponent(webId)}`}>
-    <ProfileBadgeWrapper>
-      <MiniAvatar>
-        <Image src="user.image" />
-      </MiniAvatar>
+function ProfileBadge() {
+  const { webId } = useAuth();
+  const { profile } = useProfile(webId);
 
-      <Text>
-        <Value src="user.name" />
-      </Text>
-    </ProfileBadgeWrapper>
-  </Link>
-);
+  if (!webId) return null;
 
-export default withWebId(ProfileBadge);
+  return (
+    <Link to={`/${encodeURIComponent(webId)}`}>
+      <ProfileBadgeWrapper>
+        <MiniAvatar>
+          {profile?.image && (
+            <img src={profile.image} alt={profile.name || "avatar"} />
+          )}
+        </MiniAvatar>
+        <Text>{profile?.name || webId}</Text>
+      </ProfileBadgeWrapper>
+    </Link>
+  );
+}
+
+export default ProfileBadge;
