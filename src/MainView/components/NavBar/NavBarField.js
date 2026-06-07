@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
 
@@ -31,37 +31,31 @@ const URIForm = styled.form`
 class NavBarField extends Component {
   state = {
     draftURI: this.props.webid ? decodeURIComponent(this.props.webid) : "",
-    shouldRedirect: false,
   };
   handleSubmit = (evt) => {
     evt.preventDefault();
-    this.setState({ shouldRedirect: true });
+    this.props.history.push(`/${encodeURIComponent(this.state.draftURI)}`);
   };
   render = () => {
-    if (this.state.shouldRedirect === true) {
-      this.setState({ shouldRedirect: false });
-      return <Redirect to={`/${encodeURIComponent(this.state.draftURI)}`} />;
-    } else {
-      return (
-        <URIForm onSubmit={this.handleSubmit}>
-          <label htmlFor="webid-input" style={{ position: "absolute", left: "-9999px" }}>
-            WebID or profile URL
-          </label>
-          <input
-            id="webid-input"
-            style={{ height: "24px", marginRight: "5px" }}
-            type="url"
-            name="webid"
-            placeholder="Enter a WebID URL…"
-            aria-label="WebID or profile URL"
-            onChange={(evt) => this.setState({ draftURI: evt.target.value })}
-            value={this.state.draftURI}
-          />
-          <StyledSubmit type="submit" value="View" />
-        </URIForm>
-      );
-    }
+    return (
+      <URIForm onSubmit={this.handleSubmit}>
+        <label htmlFor="webid-input" style={{ position: "absolute", left: "-9999px" }}>
+          WebID or profile URL
+        </label>
+        <input
+          id="webid-input"
+          style={{ height: "24px", marginRight: "5px" }}
+          type="url"
+          name="webid"
+          placeholder="Enter a WebID URL…"
+          aria-label="WebID or profile URL"
+          onChange={(evt) => this.setState({ draftURI: evt.target.value })}
+          value={this.state.draftURI}
+        />
+        <StyledSubmit type="submit" value="View" />
+      </URIForm>
+    );
   };
 }
 
-export default NavBarField;
+export default withRouter(NavBarField);
