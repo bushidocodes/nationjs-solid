@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { LoggedIn, LoggedOut } from "@solid/react";
 import styled from "styled-components";
 import Login from "./LogIn/Login";
@@ -13,21 +13,25 @@ const AppWrapper = styled.div`
   grid-template-columns: 100%;
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <AppWrapper>
-          <LoggedIn style={{ textAlign: "left" }}>
+const LoggedInContent = styled.div`
+  text-align: left;
+`;
+
+function App() {
+  return (
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <AppWrapper>
+        <LoggedIn>
+          <LoggedInContent>
             <MainView />
-          </LoggedIn>
-          <LoggedOut>
-            <Login />
-          </LoggedOut>
-        </AppWrapper>
-      </Router>
-    );
-  }
+          </LoggedInContent>
+        </LoggedIn>
+        <LoggedOut>
+          <Login />
+        </LoggedOut>
+      </AppWrapper>
+    </Router>
+  );
 }
 
 export default App;

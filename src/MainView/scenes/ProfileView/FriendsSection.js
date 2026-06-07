@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Value, Image, List } from "@solid/react";
 import styled from "styled-components";
@@ -48,44 +48,49 @@ const FriendName = styled.div`
   margin-left: 15px;
   text-align: left;
 `;
+
 const Text = styled.span`
   font-weight: bold;
   text-decoration: none;
 `;
 
-class FriendsSection extends Component {
-  render() {
-    return (
-      <FriendsSectionWrapper>
-        <SectionHeader>
-          <h3>Friends</h3>
-        </SectionHeader>
-        <List
-          src={`[${decodeURIComponent(this.props.webid)}].friends`}
-          container={(items) =>
-            items.length === 0 ? (
-              <p style={{ padding: "10px", color: "#666" }}>No friends listed in this SOLID profile.</p>
-            ) : (
-              <FriendGrid>{items}</FriendGrid>
-            )
-          }
-        >
-          {(elem, index) => (
-            <Link key={index} to={`/${encodeURIComponent(elem.id)}`}>
-              <FriendGridItem>
-                <FriendImage src={`[${elem.id}].image`} />
-                <FriendName>
-                  <Text>
-                    <Value src={`[${elem.id}].name`} />
-                  </Text>
-                </FriendName>
-              </FriendGridItem>
-            </Link>
-          )}
-        </List>
-      </FriendsSectionWrapper>
-    );
-  }
+const EmptyMessage = styled.p`
+  padding: 10px;
+  color: ${colors.textGray};
+`;
+
+function FriendsSection({ webid }) {
+  const decodedWebID = decodeURIComponent(webid);
+  return (
+    <FriendsSectionWrapper>
+      <SectionHeader>
+        <h3>Friends</h3>
+      </SectionHeader>
+      <List
+        src={`[${decodedWebID}].friends`}
+        container={(items) =>
+          items.length === 0 ? (
+            <EmptyMessage>No friends listed in this SOLID profile.</EmptyMessage>
+          ) : (
+            <FriendGrid>{items}</FriendGrid>
+          )
+        }
+      >
+        {(elem) => (
+          <Link key={elem.id} to={`/${encodeURIComponent(elem.id)}`}>
+            <FriendGridItem>
+              <FriendImage src={`[${elem.id}].image`} />
+              <FriendName>
+                <Text>
+                  <Value src={`[${elem.id}].name`} />
+                </Text>
+              </FriendName>
+            </FriendGridItem>
+          </Link>
+        )}
+      </List>
+    </FriendsSectionWrapper>
+  );
 }
 
 FriendsSection.propTypes = {

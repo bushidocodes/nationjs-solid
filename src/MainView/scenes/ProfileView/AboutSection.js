@@ -29,8 +29,8 @@ const SubSectionHeader = styled.h4`
   margin: 0px;
 `;
 
-const renderLinkedLI = (elem, index) => (
-  <a key={index} href={elem.id}>
+const renderLinkedLI = (elem) => (
+  <a key={elem.id} href={elem.id}>
     <li>{elem.id}</li>
   </a>
 );
