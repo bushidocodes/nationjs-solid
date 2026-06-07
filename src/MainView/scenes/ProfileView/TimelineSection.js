@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
+import { colors } from "../../../theme";
 
 const SectionWrapper = styled.div`
-  background-color: white;
+  background-color: ${colors.white};
   margin-top: 12px;
   display: flex;
   flex-direction: column;
-  border: solid 1px #d3d6db;
+  border: solid 1px ${colors.borderGrayLight};
 `;
 
 const SectionBody = styled.div`
@@ -14,26 +15,24 @@ const SectionBody = styled.div`
 `;
 
 const SectionHeader = styled.div`
-  background-color: #f5f6f7;
+  background-color: ${colors.surfaceGray};
   padding-left: 12px;
   padding-right: 12px;
-  border-bottom: solid 1px #d3d6db;
+  border-bottom: solid 1px ${colors.borderGrayLight};
 `;
 
-class TimelineSection extends Component {
-  render() {
-    return (
-      <SectionWrapper>
-        <SectionHeader>
-          <h3>Timeline</h3>
-        </SectionHeader>
-        <SectionBody>
-          Under Construction! This would the Activity Streams Outbox of the
-          selected person
-        </SectionBody>
-      </SectionWrapper>
-    );
-  }
+function TimelineSection() {
+  return (
+    <SectionWrapper>
+      <SectionHeader>
+        <h3>Timeline</h3>
+      </SectionHeader>
+      <SectionBody>
+        Under Construction! This would be the Activity Streams Outbox of the
+        selected person.
+      </SectionBody>
+    </SectionWrapper>
+  );
 }
 
 export default TimelineSection;

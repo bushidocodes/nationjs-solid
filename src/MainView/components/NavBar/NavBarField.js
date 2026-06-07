@@ -26,6 +26,16 @@ const URIForm = styled.form`
   align-content: center;
 `;
 
+const HiddenLabel = styled.label`
+  position: absolute;
+  left: -9999px;
+`;
+
+const WebIdInput = styled.input`
+  height: 24px;
+  margin-right: 5px;
+`;
+
 function NavBarField({ webid }) {
   const [draftURI, setDraftURI] = useState(
     webid ? decodeURIComponent(webid) : ""
@@ -39,12 +49,9 @@ function NavBarField({ webid }) {
 
   return (
     <URIForm onSubmit={handleSubmit}>
-      <label htmlFor="webid-input" style={{ position: "absolute", left: "-9999px" }}>
-        WebID or profile URL
-      </label>
-      <input
+      <HiddenLabel htmlFor="webid-input">WebID or profile URL</HiddenLabel>
+      <WebIdInput
         id="webid-input"
-        style={{ height: "24px", marginRight: "5px" }}
         type="url"
         name="webid"
         placeholder="Enter a WebID URL…"
