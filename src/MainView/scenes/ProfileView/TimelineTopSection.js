@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Value, Image } from "@solid/react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -97,5 +98,9 @@ class TimelineTopSection extends Component {
     );
   }
 }
+
+TimelineTopSection.propTypes = {
+  webid: PropTypes.string.isRequired,
+};
 
 export default TimelineTopSection;

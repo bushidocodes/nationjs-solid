@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { colors } from "../../theme";
 
@@ -29,5 +30,9 @@ class ProfileErrorBoundary extends Component {
     return this.props.children;
   }
 }
+
+ProfileErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default ProfileErrorBoundary;

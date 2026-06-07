@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { withWebId, Image, Value } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -44,5 +45,9 @@ const ProfileBadge = ({ webId }) => (
     </ProfileBadgeWrapper>
   </Link>
 );
+
+ProfileBadge.propTypes = {
+  webId: PropTypes.string,
+};
 
 export default withWebId(ProfileBadge);
