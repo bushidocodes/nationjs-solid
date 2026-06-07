@@ -62,7 +62,13 @@ class FriendsSection extends Component {
         </SectionHeader>
         <List
           src={`[${decodeURIComponent(this.props.webid)}].friends`}
-          container={(items) => <FriendGrid>{items}</FriendGrid>}
+          container={(items) =>
+            items.length === 0 ? (
+              <p style={{ padding: "10px", color: "#666" }}>No friends listed in this SOLID profile.</p>
+            ) : (
+              <FriendGrid>{items}</FriendGrid>
+            )
+          }
         >
           {(elem, index) => (
             <Link key={index} to={`/${encodeURIComponent(elem.id)}`}>
