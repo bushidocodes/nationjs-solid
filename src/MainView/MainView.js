@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { sizes } from "../theme";
 import About from "./scenes/About";
 import NavBar from "./components/NavBar";
+import ProfileErrorBoundary from "./components/ProfileErrorBoundary";
 import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
 // import TimelineSection from "./scenes/ProfileView/TimelineSection";
 import FriendsSection from "./scenes/ProfileView/FriendsSection";
@@ -46,7 +47,7 @@ class MainView extends Component {
                     params: { webid },
                   },
                 }) => (
-                  <Fragment>
+                  <ProfileErrorBoundary>
                     <TimelineTopSection webid={webid} />
                     <Switch>
                       {/* <Route
@@ -86,7 +87,7 @@ class MainView extends Component {
                         }) => <PhotosSection webid={webid} />}
                       /> */}
                     </Switch>
-                  </Fragment>
+                  </ProfileErrorBoundary>
                 )}
               />
             </Switch>
