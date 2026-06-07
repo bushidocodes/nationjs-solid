@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import PropTypes from "prop-types";
 import { Value, Image, List } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -87,5 +87,9 @@ class FriendsSection extends Component {
     );
   }
 }
+
+FriendsSection.propTypes = {
+  webid: PropTypes.string.isRequired,
+};
 
 export default FriendsSection;

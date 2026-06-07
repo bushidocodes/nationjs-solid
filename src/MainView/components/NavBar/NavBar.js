@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import logo from "./logo.svg";
 import { AuthButton } from "@solid/react";
@@ -61,5 +62,9 @@ class NavBar extends Component {
     );
   };
 }
+
+NavBar.propTypes = {
+  webid: PropTypes.string,
+};
 
 export default NavBar;

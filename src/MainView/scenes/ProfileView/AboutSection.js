@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { List, Value } from "@solid/react";
 import { colors } from "../../../theme";
@@ -97,5 +98,9 @@ function AboutSection({ webid }) {
     </SectionWrapper>
   );
 }
+
+AboutSection.propTypes = {
+  webid: PropTypes.string.isRequired,
+};
 
 export default AboutSection;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
@@ -55,5 +56,9 @@ function NavBarField({ webid }) {
     </URIForm>
   );
 }
+
+NavBarField.propTypes = {
+  webid: PropTypes.string,
+};
 
 export default NavBarField;
