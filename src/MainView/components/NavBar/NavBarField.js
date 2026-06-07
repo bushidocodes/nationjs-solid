@@ -28,7 +28,7 @@ const URIForm = styled.form`
   } */
 `;
 
-class NavBar extends Component {
+class NavBarField extends Component {
   state = {
     draftURI: this.props.webid ? decodeURIComponent(this.props.webid) : "",
     shouldRedirect: false,
@@ -58,4 +58,4 @@ class NavBar extends Component {
   };
 }
 
-export default NavBar;
+export default NavBarField;
