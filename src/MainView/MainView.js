@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import { Route, Switch } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { sizes } from "../theme";
 import About from "./scenes/About";
 import NavBar from "./components/NavBar";
@@ -20,80 +20,46 @@ const MainContentCenterLoggedIn = styled.div`
   margin: auto;
 `;
 
+function NavBarRoute() {
+  const { webid } = useParams();
+  return <NavBar webid={webid || ""} />;
+}
+
+function ProfileRoutes() {
+  const { webid } = useParams();
+  return (
+    <>
+      <TimelineTopSection webid={webid} />
+      <Routes>
+        <Route path="/" element={<AboutSection webid={webid} />} />
+        <Route path="/friends/" element={<FriendsSection webid={webid} />} />
+        {/* <Route path="/photos/" element={<PhotosSection webid={webid} />} /> */}
+      </Routes>
+    </>
+  );
+}
+
 class MainView extends Component {
   render() {
-    // I've added a key to NavBar to blow away draft state on navigation. https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key
     return (
-      <Fragment>
-        <Switch>
-          <Route
-            path="/:webid"
-            render={({
-              match: {
-                params: { webid },
-              },
-            }) => <NavBar webid={webid || ""} />}
-          />
-          <Route path="/" exact render={() => <NavBar webid="" />} />
-        </Switch>
+      <>
+        <Routes>
+          <Route path="/:webid/*" element={<NavBarRoute />} />
+          <Route path="/" element={<NavBar webid="" />} />
+        </Routes>
         <MainContent>
           <MainContentCenterLoggedIn>
-            <Switch>
-              <Route path="/" exact component={About} />
-              <Route
-                path="/:webid"
-                render={({
-                  match: {
-                    params: { webid },
-                  },
-                }) => (
-                  <ProfileErrorBoundary>
-                    <TimelineTopSection webid={webid} />
-                    <Switch>
-                      {/* <Route
-                        path="/:webid/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid }
-                          }
-                        }) => <TimelineSection webid={webid} />}
-                      /> */}
-                      <Route
-                        path="/:webid/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid },
-                          },
-                        }) => <AboutSection webid={webid} />}
-                      />
-                      <Route
-                        path="/:webid/friends/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid },
-                          },
-                        }) => <FriendsSection webid={webid} />}
-                      />
-                      {/* <Route
-                        path="/:webid/photos/"
-                        exact
-                        render={({
-                          match: {
-                            params: { webid }
-                          }
-                        }) => <PhotosSection webid={webid} />}
-                      /> */}
-                    </Switch>
-                  </ProfileErrorBoundary>
-                )}
-              />
-            </Switch>
+            <Routes>
+              <Route path="/" element={<About />} />
+              <Route path="/:webid/*" element={
+                <ProfileErrorBoundary>
+                  <ProfileRoutes />
+                </ProfileErrorBoundary>
+              } />
+            </Routes>
           </MainContentCenterLoggedIn>
         </MainContent>
-      </Fragment>
+      </>
     );
   }
 }
