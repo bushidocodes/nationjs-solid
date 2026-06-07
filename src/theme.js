@@ -8,6 +8,7 @@ export const colors = {
   surfaceGray: "#f5f6f7",
   white: "#ffffff",
   profileHero: "#cc0000",
+  textGray: "#666666",
 };
 
 export const sizes = {

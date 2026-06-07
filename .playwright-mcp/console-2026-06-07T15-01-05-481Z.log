@@ -1,0 +1,35 @@
+[     141ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5181/node_modules/.vite/deps/chunk-6W5FFVKH.js?v=1961d39d:21550
+[     190ms] [WARNING] Module "stream" has been externalized for browser compatibility. Cannot access "stream.Readable" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=1961d39d:29916
+[     192ms] TypeError: Class extends value undefined is not a constructor or null
+    at node_modules/web-streams-node/lib/conversions.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32123:24)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/web-streams-node/index.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32192:23)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/lib/ActorHttp.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32225:31)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/index.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32282:18)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/actor-http-solid-auth-fetch/lib/ActorHttpSolidAuthFetch.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32292:22)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+[   50026ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5181/@vite/client:559
+[   51604ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5181/node_modules/.vite/deps/chunk-6W5FFVKH.js?v=3e510300:21550
+[   51663ms] [WARNING] Module "stream" has been externalized for browser compatibility. Cannot access "stream.Readable" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=34fcf05e:29916
+[   51665ms] TypeError: Class extends value undefined is not a constructor or null
+    at node_modules/web-streams-node/lib/conversions.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=34fcf05e:32123:24)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=3e510300:17:50)
+    at node_modules/web-streams-node/index.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=34fcf05e:32192:23)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=3e510300:17:50)
+    at node_modules/@comunica/bus-http/lib/ActorHttp.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=34fcf05e:32225:31)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=3e510300:17:50)
+    at node_modules/@comunica/bus-http/index.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=34fcf05e:32282:18)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=3e510300:17:50)
+    at node_modules/@comunica/actor-http-solid-auth-fetch/lib/ActorHttpSolidAuthFetch.js (http://localhost:5181/node_modules/.vite/deps/@solid_react.js?v=34fcf05e:32292:22)
+    at __require2 (http://localhost:5181/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=3e510300:17:50)
+[   60519ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5181/@vite/client:559
+[   64872ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5181/@vite/client:559
+[   64989ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5181/node_modules/.vite/deps/chunk-V3GQOOAF.js?v=17cb92b8:28429
+[   65169ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://localhost:5181/node_modules/.vite/deps/react-router-dom.js?v=01e68199:4437
+[   65169ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://localhost:5181/node_modules/.vite/deps/react-router-dom.js?v=01e68199:4437
+[   68348ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5181/node_modules/.vite/deps/chunk-V3GQOOAF.js?v=2811a2f6:28429
+[   68522ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://localhost:5181/node_modules/.vite/deps/react-router-dom.js?v=2811a2f6:4437
+[   68522ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://localhost:5181/node_modules/.vite/deps/react-router-dom.js?v=2811a2f6:4437

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import { AuthButton } from "@solid/react";
 import styled from "styled-components";
 import { colors, sizes } from "../theme";
@@ -43,21 +43,19 @@ const StyledLogInButton = styled(AuthButton)`
   font-family: sans-serif;
 `;
 
-class Login extends Component {
-  render() {
-    return (
-      <Fragment>
-        <NavBarLoggedOut>
-          <Logo>solid</Logo>
-        </NavBarLoggedOut>
-        <MainContent>
-          <MainContentCenterLoggedOut>
-            <StyledLogInButton popup="/popup.html" />
-          </MainContentCenterLoggedOut>
-        </MainContent>
-      </Fragment>
-    );
-  }
+function Login() {
+  return (
+    <>
+      <NavBarLoggedOut>
+        <Logo>solid</Logo>
+      </NavBarLoggedOut>
+      <MainContent>
+        <MainContentCenterLoggedOut>
+          <StyledLogInButton popup="/popup.html" />
+        </MainContentCenterLoggedOut>
+      </MainContent>
+    </>
+  );
 }
 
 export default Login;

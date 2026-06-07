@@ -1,0 +1,41 @@
+[     155ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/chunk-6W5FFVKH.js?v=1961d39d:21550
+[     212ms] [WARNING] Module "stream" has been externalized for browser compatibility. Cannot access "stream.Readable" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:29916
+[     214ms] ReferenceError: global is not defined
+    at node_modules/web-streams-node/lib/conversions.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32111:5)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/web-streams-node/index.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32192:23)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/lib/ActorHttp.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32225:31)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/index.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32282:18)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/actor-http-solid-auth-fetch/lib/ActorHttpSolidAuthFetch.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32292:22)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+[   18023ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/chunk-6W5FFVKH.js?v=1961d39d:21550
+[   18031ms] [WARNING] Module "stream" has been externalized for browser compatibility. Cannot access "stream.Readable" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:29916
+[   18032ms] ReferenceError: global is not defined
+    at node_modules/web-streams-node/lib/conversions.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32111:5)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/web-streams-node/index.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32192:23)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/lib/ActorHttp.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32225:31)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/index.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32282:18)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/actor-http-solid-auth-fetch/lib/ActorHttpSolidAuthFetch.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32292:22)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+[   26182ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5174/@vite/client:559
+[   26628ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/chunk-6W5FFVKH.js?v=1961d39d:21550
+[   26636ms] [WARNING] Module "stream" has been externalized for browser compatibility. Cannot access "stream.Readable" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:29916
+[   26636ms] TypeError: Class extends value undefined is not a constructor or null
+    at node_modules/web-streams-node/lib/conversions.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32123:24)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/web-streams-node/index.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32192:23)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/lib/ActorHttp.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32225:31)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/bus-http/index.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32282:18)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+    at node_modules/@comunica/actor-http-solid-auth-fetch/lib/ActorHttpSolidAuthFetch.js (http://localhost:5174/node_modules/.vite/deps/@solid_react.js?v=1961d39d:32292:22)
+    at __require2 (http://localhost:5174/node_modules/.vite/deps/chunk-PLDDJCW6.js?v=1961d39d:17:50)
+[   61457ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5174/@vite/client:559

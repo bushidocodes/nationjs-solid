@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Value, Image } from "@solid/react";
 import { Link } from "react-router-dom";
@@ -41,62 +41,60 @@ const SectionHeaderItem = styled.div`
   border: 1px solid ${colors.borderGrayLighter};
 `;
 
-class TimelineTopSection extends Component {
-  render() {
-    return (
-      <div>
-        <div
-          style={{
-            height: sizes.profileHeroHeight,
-            backgroundColor: colors.profileHero,
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <div
-            style={{
-              alignSelf: "flex-end",
-              width: sizes.avatarSize,
-              position: "relative",
-              marginLeft: "20px",
-            }}
-          >
-            <AvatarReal>
-              <Image src={`[${decodeURIComponent(this.props.webid)}].image`} />
-            </AvatarReal>
-          </div>
-          <div
-            style={{
-              color: "white",
-              marginLeft: "20px",
-              marginBottom: "20px",
-              fontWeight: "bold",
-              alignSelf: "flex-end",
-              fontSize: "24px",
-            }}
-          >
-            <Value src={`[${decodeURIComponent(this.props.webid)}].name`} />
-          </div>
-        </div>
-        <div style={{ backgroundColor: colors.white, height: sizes.navbarHeight }}>
-          <SectionHeader>
-            {/* <Link to={`/${this.props.webid}/`}>
-              <SectionHeaderItem>Timeline</SectionHeaderItem>
-            </Link> */}
-            <Link to={`/${this.props.webid}/`}>
-              <SectionHeaderItem>About</SectionHeaderItem>
-            </Link>
-            <Link to={`/${this.props.webid}/friends/`}>
-              <SectionHeaderItem>Friends</SectionHeaderItem>
-            </Link>
-            {/* <Link to={`/${this.props.webid}/photos/`}>
-              <SectionHeaderItem>Photos</SectionHeaderItem>
-            </Link> */}
-          </SectionHeader>
-        </div>
-      </div>
-    );
-  }
+const ProfileHero = styled.div`
+  height: ${sizes.profileHeroHeight};
+  background-color: ${colors.profileHero};
+  display: flex;
+  flex-direction: row;
+`;
+
+const AvatarWrapper = styled.div`
+  align-self: flex-end;
+  width: ${sizes.avatarSize};
+  position: relative;
+  margin-left: 20px;
+`;
+
+const ProfileName = styled.div`
+  color: ${colors.white};
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  align-self: flex-end;
+  font-size: 24px;
+`;
+
+const NavRow = styled.div`
+  background-color: ${colors.white};
+  height: ${sizes.navbarHeight};
+`;
+
+function TimelineTopSection({ webid }) {
+  const decodedWebID = decodeURIComponent(webid);
+  return (
+    <div>
+      <ProfileHero>
+        <AvatarWrapper>
+          <AvatarReal>
+            <Image src={`[${decodedWebID}].image`} />
+          </AvatarReal>
+        </AvatarWrapper>
+        <ProfileName>
+          <Value src={`[${decodedWebID}].name`} />
+        </ProfileName>
+      </ProfileHero>
+      <NavRow>
+        <SectionHeader>
+          <Link to={`/${webid}/`}>
+            <SectionHeaderItem>About</SectionHeaderItem>
+          </Link>
+          <Link to={`/${webid}/friends/`}>
+            <SectionHeaderItem>Friends</SectionHeaderItem>
+          </Link>
+        </SectionHeader>
+      </NavRow>
+    </div>
+  );
 }
 
 TimelineTopSection.propTypes = {

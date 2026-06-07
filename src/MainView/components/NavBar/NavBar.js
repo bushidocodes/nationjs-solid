@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import logo from "./logo.svg";
@@ -40,27 +40,24 @@ const NavBarWrapper = styled.div`
   grid-gap: 20px;
 `;
 
-class NavBar extends Component {
-  render = () => {
-    return (
-      <NavBarWrapper>
-        <Link
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gridTemplateRows: "1fr",
-            alignContent: "center",
-          }}
-          to="/"
-        >
-          <Icon src={logo} alt="logo" />
-        </Link>
-        <NavBarField webid={this.props.webid} key={this.props.webid || ""} />
-        <ProfileBadge />
-        <StyledLogOutButton popup="/popup.html" />
-      </NavBarWrapper>
-    );
-  };
+const LogoLink = styled(Link)`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-content: center;
+`;
+
+function NavBar({ webid }) {
+  return (
+    <NavBarWrapper>
+      <LogoLink to="/">
+        <Icon src={logo} alt="logo" />
+      </LogoLink>
+      <NavBarField webid={webid} key={webid || ""} />
+      <ProfileBadge />
+      <StyledLogOutButton popup="/popup.html" />
+    </NavBarWrapper>
+  );
 }
 
 NavBar.propTypes = {
