@@ -44,10 +44,16 @@ class NavBarField extends Component {
     } else {
       return (
         <URIForm onSubmit={this.handleSubmit}>
+          <label htmlFor="webid-input" style={{ position: "absolute", left: "-9999px" }}>
+            WebID or profile URL
+          </label>
           <input
+            id="webid-input"
             style={{ height: "24px", marginRight: "5px" }}
-            type="text"
-            name="lastname"
+            type="url"
+            name="webid"
+            placeholder="Enter a WebID URL…"
+            aria-label="WebID or profile URL"
             onChange={(evt) => this.setState({ draftURI: evt.target.value })}
             value={this.state.draftURI}
           />
