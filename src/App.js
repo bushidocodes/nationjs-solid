@@ -1,4 +1,3 @@
-import React from "react";
 import { LoggedIn, LoggedOut } from "@solid/react";
 import styled from "styled-components";
 import Login from "./LogIn/Login";

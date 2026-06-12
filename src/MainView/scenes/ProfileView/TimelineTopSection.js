@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Value, Image } from "@solid/react";
 import { Link } from "react-router-dom";
