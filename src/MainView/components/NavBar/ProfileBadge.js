@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { withWebId, Image, Value } from "@solid/react";
 import styled from "styled-components";

@@ -15,13 +15,11 @@ export default defineConfig({
       enforce: "pre",
       async transform(code, id) {
         if (/src\/.*\.js$/.test(id)) {
-          return transformWithEsbuild(code, id, { loader: "jsx" });
+          return transformWithEsbuild(code, id, { loader: "jsx", jsx: "automatic" });
         }
       },
     },
-    react({
-      jsxRuntime: "classic",
-    }),
+    react(),
   ],
   optimizeDeps: {
     esbuildOptions: {

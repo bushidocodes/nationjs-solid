@@ -1,4 +1,3 @@
-import React from "react";
 import { AuthButton } from "@solid/react";
 import styled from "styled-components";
 import { colors, sizes } from "../theme";

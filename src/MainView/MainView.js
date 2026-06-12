@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Routes, Route, useParams } from "react-router-dom";
 import { sizes } from "../theme";
