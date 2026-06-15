@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Value, Image, List } from "@solid/react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { colors } from "../../../theme";
 
 const FriendGrid = styled.div`

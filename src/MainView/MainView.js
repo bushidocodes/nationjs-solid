@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router";
 import { sizes } from "../theme";
 import About from "./scenes/About";
 import NavBar from "./components/NavBar";

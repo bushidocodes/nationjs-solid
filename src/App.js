@@ -2,7 +2,7 @@ import { LoggedIn, LoggedOut } from "@solid/react";
 import styled from "styled-components";
 import Login from "./LogIn/Login";
 import MainView from "./MainView";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router";
 import { sizes } from "./theme";
 
 const AppWrapper = styled.div`
@@ -18,7 +18,7 @@ const LoggedInContent = styled.div`
 
 function App() {
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <Router>
       <AppWrapper>
         <LoggedIn>
           <LoggedInContent>
