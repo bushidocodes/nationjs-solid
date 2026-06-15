@@ -1,9 +1,9 @@
-import { LoggedIn, LoggedOut } from "@solid/react";
 import styled from "styled-components";
 import Login from "./LogIn/Login";
 import MainView from "./MainView";
 import { BrowserRouter as Router } from "react-router";
 import { sizes } from "./theme";
+import { useAuth } from "./context/AuthContext";
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -17,17 +17,17 @@ const LoggedInContent = styled.div`
 `;
 
 function App() {
+  const { isLoggedIn } = useAuth();
   return (
     <Router>
       <AppWrapper>
-        <LoggedIn>
+        {isLoggedIn ? (
           <LoggedInContent>
             <MainView />
           </LoggedInContent>
-        </LoggedIn>
-        <LoggedOut>
+        ) : (
           <Login />
-        </LoggedOut>
+        )}
       </AppWrapper>
     </Router>
   );

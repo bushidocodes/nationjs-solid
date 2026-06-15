@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import { Value, Image } from "@solid/react";
 import { Link } from "react-router";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
+import { useProfile } from "../../../hooks/useProfile";
 
 const AvatarReal = styled.div`
   position: absolute;
@@ -13,9 +13,10 @@ const AvatarReal = styled.div`
   border: 6px solid white;
   border-radius: 90px;
   overflow: hidden;
-  * {
+  img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -70,17 +71,19 @@ const NavRow = styled.div`
 
 function TimelineTopSection({ webid }) {
   const decodedWebID = decodeURIComponent(webid);
+  const { profile } = useProfile(decodedWebID);
+
   return (
     <div>
       <ProfileHero>
         <AvatarWrapper>
           <AvatarReal>
-            <Image src={`[${decodedWebID}].image`} />
+            {profile?.image && (
+              <img src={profile.image} alt={profile.name || "avatar"} />
+            )}
           </AvatarReal>
         </AvatarWrapper>
-        <ProfileName>
-          <Value src={`[${decodedWebID}].name`} />
-        </ProfileName>
+        <ProfileName>{profile?.name || decodedWebID}</ProfileName>
       </ProfileHero>
       <NavRow>
         <SectionHeader>
