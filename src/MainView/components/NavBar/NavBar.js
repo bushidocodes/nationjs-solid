@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router";
 import logo from "./logo.svg";
-import { AuthButton } from "@solid/react";
 import styled from "styled-components";
 import ProfileBadge from "./ProfileBadge";
 import NavBarField from "./NavBarField";
 import { colors, sizes } from "../../../theme";
+import { useAuth } from "../../../context/AuthContext";
 
 const Icon = styled.img`
   height: 35px;
@@ -13,7 +13,7 @@ const Icon = styled.img`
   align-self: center;
 `;
 
-const StyledLogOutButton = styled(AuthButton)`
+const LogOutButton = styled.button`
   background-color: ${colors.actionBlue};
   border-radius: 4px;
   border-style: solid;
@@ -25,6 +25,7 @@ const StyledLogOutButton = styled(AuthButton)`
   font-weight: bold;
   font-family: sans-serif;
   align-self: center;
+  cursor: pointer;
 `;
 
 const NavBarWrapper = styled.div`
@@ -47,6 +48,7 @@ const LogoLink = styled(Link)`
 `;
 
 function NavBar({ webid }) {
+  const { logout } = useAuth();
   return (
     <NavBarWrapper>
       <LogoLink to="/">
@@ -54,7 +56,7 @@ function NavBar({ webid }) {
       </LogoLink>
       <NavBarField webid={webid} key={webid || ""} />
       <ProfileBadge />
-      <StyledLogOutButton popup="/popup.html" />
+      <LogOutButton onClick={logout}>Log out</LogOutButton>
     </NavBarWrapper>
   );
 }

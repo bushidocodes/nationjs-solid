@@ -1,8 +1,13 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import { AuthProvider } from "./context/AuthContext";
+import { handleIncomingRedirect } from "@inrupt/solid-client-authn-browser";
 
-createRoot(document.getElementById("root")).render(<App />);
-
-serviceWorker.unregister();
+handleIncomingRedirect({ restorePreviousSession: true }).then(() => {
+  createRoot(document.getElementById("root")).render(
+    <AuthProvider>
+      <App />
+    </AuthProvider>,
+  );
+});
