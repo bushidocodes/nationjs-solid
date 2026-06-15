@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { withWebId, Image, Value } from "@solid/react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { colors, sizes } from "../../../theme";
 
 const ProfileBadgeWrapper = styled.div`

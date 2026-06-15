@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Value, Image } from "@solid/react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
 

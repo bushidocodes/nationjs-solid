@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import logo from "./logo.svg";
 import { AuthButton } from "@solid/react";
 import styled from "styled-components";
