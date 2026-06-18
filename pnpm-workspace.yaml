@@ -1,0 +1,6 @@
+overrides:
+  "parse-link-header": "^2.0.0"
+
+allowBuilds:
+  esbuild: true
+  msgpackr-extract: true
