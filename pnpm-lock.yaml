@@ -30,9 +30,6 @@ importers:
         specifier: ^6.1.0
         version: 6.4.2(react-dom@19.2.7(react@19.2.7))(react-native@0.86.0(@babel/core@7.29.7)(react@19.2.7))(react@19.2.7)
     devDependencies:
-      '@babel/plugin-transform-react-jsx':
-        specifier: ^7.29.7
-        version: 7.29.7(@babel/core@7.29.7)
       '@eslint-react/eslint-plugin':
         specifier: ^5.9.0
         version: 5.9.0(eslint@10.5.0)(typescript@6.0.3)
@@ -4929,7 +4926,8 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
-  '@babel/compat-data@7.29.7': {}
+  '@babel/compat-data@7.29.7':
+    optional: true
 
   '@babel/core@7.29.7':
     dependencies:
@@ -4950,6 +4948,7 @@ snapshots:
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@babel/generator@7.29.7':
     dependencies:
@@ -4958,10 +4957,12 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
+    optional: true
 
   '@babel/helper-annotate-as-pure@7.29.7':
     dependencies:
       '@babel/types': 7.29.7
+    optional: true
 
   '@babel/helper-compilation-targets@7.29.7':
     dependencies:
@@ -4970,6 +4971,7 @@ snapshots:
       browserslist: 4.28.2
       lru-cache: 5.1.1
       semver: 6.3.1
+    optional: true
 
   '@babel/helper-create-class-features-plugin@7.29.7(@babel/core@7.29.7)':
     dependencies:
@@ -5005,7 +5007,8 @@ snapshots:
       - supports-color
     optional: true
 
-  '@babel/helper-globals@7.29.7': {}
+  '@babel/helper-globals@7.29.7':
+    optional: true
 
   '@babel/helper-member-expression-to-functions@7.29.7':
     dependencies:
@@ -5021,6 +5024,7 @@ snapshots:
       '@babel/types': 7.29.7
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@babel/helper-module-transforms@7.29.7(@babel/core@7.29.7)':
     dependencies:
@@ -5030,13 +5034,15 @@ snapshots:
       '@babel/traverse': 7.29.7
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@babel/helper-optimise-call-expression@7.29.7':
     dependencies:
       '@babel/types': 7.29.7
     optional: true
 
-  '@babel/helper-plugin-utils@7.29.7': {}
+  '@babel/helper-plugin-utils@7.29.7':
+    optional: true
 
   '@babel/helper-remap-async-to-generator@7.29.7(@babel/core@7.29.7)':
     dependencies:
@@ -5066,11 +5072,13 @@ snapshots:
       - supports-color
     optional: true
 
-  '@babel/helper-string-parser@7.29.7': {}
+  '@babel/helper-string-parser@7.29.7':
+    optional: true
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@babel/helper-validator-option@7.29.7': {}
+  '@babel/helper-validator-option@7.29.7':
+    optional: true
 
   '@babel/helper-wrap-function@7.29.7':
     dependencies:
@@ -5085,10 +5093,12 @@ snapshots:
     dependencies:
       '@babel/template': 7.29.7
       '@babel/types': 7.29.7
+    optional: true
 
   '@babel/parser@7.29.7':
     dependencies:
       '@babel/types': 7.29.7
+    optional: true
 
   '@babel/plugin-proposal-decorators@7.29.7(@babel/core@7.29.7)':
     dependencies:
@@ -5134,6 +5144,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
+    optional: true
 
   '@babel/plugin-syntax-nullish-coalescing-operator@7.8.3(@babel/core@7.29.7)':
     dependencies:
@@ -5345,6 +5356,7 @@ snapshots:
       '@babel/types': 7.29.7
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@babel/plugin-transform-react-pure-annotations@7.29.7(@babel/core@7.29.7)':
     dependencies:
@@ -5404,6 +5416,7 @@ snapshots:
       '@babel/code-frame': 7.29.7
       '@babel/parser': 7.29.7
       '@babel/types': 7.29.7
+    optional: true
 
   '@babel/traverse@7.29.7':
     dependencies:
@@ -5416,11 +5429,13 @@ snapshots:
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@babel/types@7.29.7':
     dependencies:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
+    optional: true
 
   '@bramus/specificity@2.4.2':
     dependencies:
@@ -7271,13 +7286,16 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
       '@jridgewell/trace-mapping': 0.3.31
+    optional: true
 
   '@jridgewell/remapping@2.3.5':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
+    optional: true
 
-  '@jridgewell/resolve-uri@3.1.2': {}
+  '@jridgewell/resolve-uri@3.1.2':
+    optional: true
 
   '@jridgewell/source-map@0.3.11':
     dependencies:
@@ -7291,6 +7309,7 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+    optional: true
 
   '@ldflex/comunica@3.5.0(@comunica/bus-http@1.22.1(@comunica/core@1.22.0))(@comunica/core@1.22.0)(@comunica/types@1.22.0)(expo@56.0.12)(ldflex@2.15.2)(react-native@0.86.0(@babel/core@7.29.7)(react@19.2.7))':
     dependencies:
@@ -8121,7 +8140,8 @@ snapshots:
 
   base64url@3.0.1: {}
 
-  baseline-browser-mapping@2.10.38: {}
+  baseline-browser-mapping@2.10.38:
+    optional: true
 
   bidi-js@1.0.3:
     dependencies:
@@ -8217,6 +8237,7 @@ snapshots:
       electron-to-chromium: 1.5.375
       node-releases: 2.0.47
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
+    optional: true
 
   bser@2.1.1:
     dependencies:
@@ -8263,7 +8284,8 @@ snapshots:
   camelcase@6.3.0:
     optional: true
 
-  caniuse-lite@1.0.30001799: {}
+  caniuse-lite@1.0.30001799:
+    optional: true
 
   canonicalize@1.0.8: {}
 
@@ -8600,7 +8622,8 @@ snapshots:
   ee-first@1.1.1:
     optional: true
 
-  electron-to-chromium@1.5.375: {}
+  electron-to-chromium@1.5.375:
+    optional: true
 
   elliptic@6.6.1:
     dependencies:
@@ -9082,7 +9105,8 @@ snapshots:
 
   generator-function@2.0.1: {}
 
-  gensync@1.0.0-beta.2: {}
+  gensync@1.0.0-beta.2:
+    optional: true
 
   get-caller-file@2.0.5: {}
 
@@ -9454,7 +9478,8 @@ snapshots:
     transitivePeerDependencies:
       - '@noble/hashes'
 
-  jsesc@3.1.0: {}
+  jsesc@3.1.0:
+    optional: true
 
   json-buffer@3.0.1: {}
 
@@ -9462,7 +9487,8 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
-  json5@2.2.3: {}
+  json5@2.2.3:
+    optional: true
 
   jsonfile@6.2.1:
     dependencies:
@@ -9623,6 +9649,7 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+    optional: true
 
   lru-cache@6.0.0:
     dependencies:
@@ -9946,7 +9973,8 @@ snapshots:
   node-int64@0.4.0:
     optional: true
 
-  node-releases@2.0.47: {}
+  node-releases@2.0.47:
+    optional: true
 
   node-stdlib-browser@1.3.1:
     dependencies:
@@ -10570,7 +10598,8 @@ snapshots:
 
   scheduler@0.27.0: {}
 
-  semver@6.3.1: {}
+  semver@6.3.1:
+    optional: true
 
   semver@7.8.4: {}
 
@@ -11030,6 +11059,7 @@ snapshots:
       browserslist: 4.28.2
       escalade: 3.2.0
       picocolors: 1.1.1
+    optional: true
 
   uri-js@4.4.1:
     dependencies:
@@ -11261,7 +11291,8 @@ snapshots:
 
   y18n@5.0.8: {}
 
-  yallist@3.1.1: {}
+  yallist@3.1.1:
+    optional: true
 
   yallist@4.0.0: {}
 
