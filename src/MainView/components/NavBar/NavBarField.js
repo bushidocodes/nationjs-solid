@@ -37,7 +37,7 @@ const WebIdInput = styled.input`
 `;
 
 function NavBarField({ webid }) {
-  const [draftURI, setDraftURI] = useState(
+  const [draftURI, setDraftURI] = useState(() =>
     webid ? decodeURIComponent(webid) : ""
   );
   const navigate = useNavigate();
