@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Value, Image } from "@solid/react";
 import { Link } from "react-router";
 import styled from "styled-components";
@@ -68,7 +67,11 @@ const NavRow = styled.div`
   height: ${sizes.navbarHeight};
 `;
 
-function TimelineTopSection({ webid }) {
+interface TimelineTopSectionProps {
+  webid: string;
+}
+
+function TimelineTopSection({ webid }: TimelineTopSectionProps) {
   const decodedWebID = decodeURIComponent(webid);
   return (
     <div>
@@ -95,9 +98,5 @@ function TimelineTopSection({ webid }) {
     </div>
   );
 }
-
-TimelineTopSection.propTypes = {
-  webid: PropTypes.string.isRequired,
-};
 
 export default TimelineTopSection;

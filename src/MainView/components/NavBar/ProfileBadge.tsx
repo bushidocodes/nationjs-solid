@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { withWebId, Image, Value } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router";
@@ -31,7 +30,11 @@ const Text = styled.span`
   text-decoration: none;
 `;
 
-const ProfileBadge = ({ webId }) => (
+interface ProfileBadgeProps {
+  webId?: string;
+}
+
+const ProfileBadge = ({ webId = "" }: ProfileBadgeProps) => (
   <Link to={`/${encodeURIComponent(webId)}`}>
     <ProfileBadgeWrapper>
       <MiniAvatar>
@@ -44,9 +47,5 @@ const ProfileBadge = ({ webId }) => (
     </ProfileBadgeWrapper>
   </Link>
 );
-
-ProfileBadge.propTypes = {
-  webId: PropTypes.string,
-};
 
 export default withWebId(ProfileBadge);

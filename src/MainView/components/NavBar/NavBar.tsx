@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Link } from "react-router";
 import logo from "./logo.svg";
 import { AuthButton } from "@solid/react";
@@ -46,7 +45,11 @@ const LogoLink = styled(Link)`
   align-content: center;
 `;
 
-function NavBar({ webid }) {
+interface NavBarProps {
+  webid?: string;
+}
+
+function NavBar({ webid }: NavBarProps) {
   return (
     <NavBarWrapper>
       <LogoLink to="/">
@@ -58,9 +61,5 @@ function NavBar({ webid }) {
     </NavBarWrapper>
   );
 }
-
-NavBar.propTypes = {
-  webid: PropTypes.string,
-};
 
 export default NavBar;

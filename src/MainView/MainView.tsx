@@ -23,7 +23,7 @@ function NavBarRoute() {
 }
 
 function ProfileRoutes() {
-  const { webid } = useParams();
+  const webid = useParams().webid ?? "";
   return (
     <>
       <TimelineTopSection webid={webid} />

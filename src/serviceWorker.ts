@@ -1,5 +1,10 @@
 // Service worker registration helpers. register() is not called by default.
-// Call register() in index.js to enable offline support and faster repeat loads.
+// Call register() in index.tsx to enable offline support and faster repeat loads.
+
+interface ServiceWorkerConfig {
+  onUpdate?: (registration: ServiceWorkerRegistration) => void;
+  onSuccess?: (registration: ServiceWorkerRegistration) => void;
+}
 
 const isLocalhost =
   window.location.hostname === "localhost" ||
@@ -8,7 +13,7 @@ const isLocalhost =
     window.location.hostname
   );
 
-export function register(config) {
+export function register(config?: ServiceWorkerConfig) {
   if (import.meta.env.PROD && "serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       const swUrl = "/service-worker.js";
@@ -24,7 +29,7 @@ export function register(config) {
   }
 }
 
-async function registerValidSW(swUrl, config) {
+async function registerValidSW(swUrl: string, config?: ServiceWorkerConfig) {
   try {
     const registration = await navigator.serviceWorker.register(swUrl);
     registration.onupdatefound = () => {
@@ -49,7 +54,7 @@ async function registerValidSW(swUrl, config) {
   }
 }
 
-async function checkValidServiceWorker(swUrl, config) {
+async function checkValidServiceWorker(swUrl: string, config?: ServiceWorkerConfig) {
   try {
     const response = await fetch(swUrl);
     const contentType = response.headers.get("content-type");

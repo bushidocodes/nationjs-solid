@@ -1,5 +1,4 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
@@ -36,13 +35,17 @@ const WebIdInput = styled.input`
   margin-right: 5px;
 `;
 
-function NavBarField({ webid }) {
+interface NavBarFieldProps {
+  webid?: string;
+}
+
+function NavBarField({ webid }: NavBarFieldProps) {
   const [draftURI, setDraftURI] = useState(() =>
     webid ? decodeURIComponent(webid) : ""
   );
   const navigate = useNavigate();
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     navigate(`/${encodeURIComponent(draftURI)}`);
   };
@@ -56,16 +59,14 @@ function NavBarField({ webid }) {
         name="webid"
         placeholder="Enter a WebID URL…"
         aria-label="WebID or profile URL"
-        onChange={(evt) => setDraftURI(evt.target.value)}
+        onChange={(evt: ChangeEvent<HTMLInputElement>) =>
+          setDraftURI(evt.target.value)
+        }
         value={draftURI}
       />
       <StyledSubmit type="submit" value="View" />
     </URIForm>
   );
 }
-
-NavBarField.propTypes = {
-  webid: PropTypes.string,
-};
 
 export default NavBarField;
