@@ -3,7 +3,7 @@ import globals from "globals";
 import eslintReact from "@eslint-react/eslint-plugin";
 
 const sharedLanguageOptions = {
-  ecmaVersion: 2022,
+  ecmaVersion: 2025,
   sourceType: "module",
   parserOptions: {
     ecmaFeatures: { jsx: true },
