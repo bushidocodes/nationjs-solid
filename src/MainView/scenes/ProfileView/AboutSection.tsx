@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
 import styled from "styled-components";
-import { List, Value } from "@solid/react";
+import { List, Value, type SolidTerm } from "@solid/react";
 import { colors } from "../../../theme";
 
 const SectionWrapper = styled.div`
@@ -28,13 +27,17 @@ const SubSectionHeader = styled.h4`
   margin: 0px;
 `;
 
-const renderLinkedLI = (elem) => (
+const renderLinkedLI = (elem: SolidTerm) => (
   <a key={elem.id} href={elem.id}>
     <li>{elem.id}</li>
   </a>
 );
 
-function AboutSection({ webid }) {
+interface AboutSectionProps {
+  webid: string;
+}
+
+function AboutSection({ webid }: AboutSectionProps) {
   const decodedWebID = decodeURIComponent(webid);
   return (
     <SectionWrapper>
@@ -97,9 +100,5 @@ function AboutSection({ webid }) {
     </SectionWrapper>
   );
 }
-
-AboutSection.propTypes = {
-  webid: PropTypes.string.isRequired,
-};
 
 export default AboutSection;

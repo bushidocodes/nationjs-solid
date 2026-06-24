@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Value, Image, List } from "@solid/react";
 import styled from "styled-components";
 import { Link } from "react-router";
@@ -58,7 +57,11 @@ const EmptyMessage = styled.p`
   color: ${colors.textGray};
 `;
 
-function FriendsSection({ webid }) {
+interface FriendsSectionProps {
+  webid: string;
+}
+
+function FriendsSection({ webid }: FriendsSectionProps) {
   const decodedWebID = decodeURIComponent(webid);
   return (
     <FriendsSectionWrapper>
@@ -91,9 +94,5 @@ function FriendsSection({ webid }) {
     </FriendsSectionWrapper>
   );
 }
-
-FriendsSection.propTypes = {
-  webid: PropTypes.string.isRequired,
-};
 
 export default FriendsSection;

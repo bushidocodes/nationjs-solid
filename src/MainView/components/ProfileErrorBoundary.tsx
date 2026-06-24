@@ -1,7 +1,14 @@
-import { Component } from "react";
-import PropTypes from "prop-types";
+import { Component, type ReactNode } from "react";
 import styled from "styled-components";
 import { colors } from "../../theme";
+
+interface ProfileErrorBoundaryProps {
+  children: ReactNode;
+}
+
+interface ProfileErrorBoundaryState {
+  hasError: boolean;
+}
 
 const ErrorBox = styled.div`
   background-color: ${colors.white};
@@ -12,10 +19,13 @@ const ErrorBox = styled.div`
   color: #666;
 `;
 
-class ProfileErrorBoundary extends Component {
-  state = { hasError: false };
+class ProfileErrorBoundary extends Component<
+  ProfileErrorBoundaryProps,
+  ProfileErrorBoundaryState
+> {
+  state: ProfileErrorBoundaryState = { hasError: false };
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): ProfileErrorBoundaryState {
     return { hasError: true };
   }
 
@@ -30,9 +40,5 @@ class ProfileErrorBoundary extends Component {
     return this.props.children;
   }
 }
-
-ProfileErrorBoundary.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default ProfileErrorBoundary;
