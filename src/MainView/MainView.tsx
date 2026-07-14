@@ -1,12 +1,12 @@
+import { Route, Routes, useParams } from "react-router";
 import styled from "styled-components";
-import { Routes, Route, useParams } from "react-router";
 import { sizes } from "../theme";
-import About from "./scenes/About";
 import NavBar from "./components/NavBar";
 import ProfileErrorBoundary from "./components/ProfileErrorBoundary";
-import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
-import FriendsSection from "./scenes/ProfileView/FriendsSection";
+import About from "./scenes/About";
 import AboutSection from "./scenes/ProfileView/AboutSection";
+import FriendsSection from "./scenes/ProfileView/FriendsSection";
+import TimelineTopSection from "./scenes/ProfileView/TimelineTopSection";
 
 const MainContent = styled.div`
   height: 100%;

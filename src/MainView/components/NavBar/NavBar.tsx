@@ -1,10 +1,10 @@
-import { Link } from "react-router";
-import logo from "./logo.svg";
 import { AuthButton } from "@solid/react";
+import { Link } from "react-router";
 import styled from "styled-components";
-import ProfileBadge from "./ProfileBadge";
-import NavBarField from "./NavBarField";
 import { colors, sizes } from "../../../theme";
+import logo from "./logo.svg";
+import NavBarField from "./NavBarField";
+import ProfileBadge from "./ProfileBadge";
 
 const Icon = styled.img`
   height: 35px;

@@ -40,6 +40,6 @@ declare module "@solid/react" {
 
   /** Injects the logged-in user's WebID into the wrapped component as `webId`. */
   export function withWebId<P extends { webId?: string }>(
-    Component: FC<P>,
+    Component: FC<P>
   ): FC<Omit<P, "webId">>;
 }

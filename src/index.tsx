@@ -3,6 +3,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-createRoot(document.getElementById("root")!).render(<App />);
+const root = document.getElementById("root");
+if (!root) {
+  throw new Error('Root element "#root" not found');
+}
+
+createRoot(root).render(<App />);
 
 serviceWorker.unregister();

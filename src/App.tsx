@@ -1,8 +1,8 @@
 import { LoggedIn, LoggedOut } from "@solid/react";
+import { BrowserRouter as Router } from "react-router";
 import styled from "styled-components";
 import Login from "./LogIn/Login";
 import MainView from "./MainView";
-import { BrowserRouter as Router } from "react-router";
 import { sizes } from "./theme";
 
 const AppWrapper = styled.div`
