@@ -33,7 +33,10 @@ class ProfileErrorBoundary extends Component<
     if (this.state.hasError) {
       return (
         <ErrorBox>
-          <p>Could not load data from this SOLID pod. The pod may be unreachable or the profile may not exist.</p>
+          <p>
+            Could not load data from this SOLID pod. The pod may be unreachable
+            or the profile may not exist.
+          </p>
         </ErrorBox>
       );
     }

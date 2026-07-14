@@ -1,6 +1,6 @@
-import { Value, Image, List } from "@solid/react";
-import styled from "styled-components";
+import { Image, List, Value } from "@solid/react";
 import { Link } from "react-router";
+import styled from "styled-components";
 import { colors } from "../../../theme";
 
 const FriendGrid = styled.div`
@@ -72,7 +72,9 @@ function FriendsSection({ webid }: FriendsSectionProps) {
         src={`[${decodedWebID}].friends`}
         container={(items) =>
           items.length === 0 ? (
-            <EmptyMessage>No friends listed in this SOLID profile.</EmptyMessage>
+            <EmptyMessage>
+              No friends listed in this SOLID profile.
+            </EmptyMessage>
           ) : (
             <FriendGrid>{items}</FriendGrid>
           )

@@ -1,4 +1,4 @@
-import { Value, Image } from "@solid/react";
+import { Image, Value } from "@solid/react";
 import { Link } from "react-router";
 import styled from "styled-components";
 import { colors, sizes } from "../../../theme";

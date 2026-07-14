@@ -1,5 +1,5 @@
+import { List, type SolidTerm, Value } from "@solid/react";
 import styled from "styled-components";
-import { List, Value, type SolidTerm } from "@solid/react";
 import { colors } from "../../../theme";
 
 const SectionWrapper = styled.div`
@@ -83,7 +83,10 @@ function AboutSection({ webid }: AboutSectionProps) {
           <List src={`[${decodedWebID}].page`} container={(items) => items}>
             {renderLinkedLI}
           </List>
-          <List src={`[${decodedWebID}].publications`} container={(items) => items}>
+          <List
+            src={`[${decodedWebID}].publications`}
+            container={(items) => items}
+          >
             {renderLinkedLI}
           </List>
           <List src={`[${decodedWebID}].account`} container={(items) => items}>

@@ -21,7 +21,9 @@ export function register(config?: ServiceWorkerConfig) {
       if (isLocalhost) {
         checkValidServiceWorker(swUrl, config);
         await navigator.serviceWorker.ready;
-        console.log("This web app is being served cache-first by a service worker.");
+        console.log(
+          "This web app is being served cache-first by a service worker."
+        );
       } else {
         registerValidSW(swUrl, config);
       }
@@ -54,7 +56,10 @@ async function registerValidSW(swUrl: string, config?: ServiceWorkerConfig) {
   }
 }
 
-async function checkValidServiceWorker(swUrl: string, config?: ServiceWorkerConfig) {
+async function checkValidServiceWorker(
+  swUrl: string,
+  config?: ServiceWorkerConfig
+) {
   try {
     const response = await fetch(swUrl);
     const contentType = response.headers.get("content-type");
@@ -73,7 +78,9 @@ async function checkValidServiceWorker(swUrl: string, config?: ServiceWorkerConf
       registerValidSW(swUrl, config);
     }
   } catch {
-    console.log("No internet connection found. App is running in offline mode.");
+    console.log(
+      "No internet connection found. App is running in offline mode."
+    );
   }
 }
 

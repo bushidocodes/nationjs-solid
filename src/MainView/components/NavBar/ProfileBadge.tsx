@@ -1,6 +1,6 @@
-import { withWebId, Image, Value } from "@solid/react";
-import styled from "styled-components";
+import { Image, Value, withWebId } from "@solid/react";
 import { Link } from "react-router";
+import styled from "styled-components";
 import { colors, sizes } from "../../../theme";
 
 const ProfileBadgeWrapper = styled.div`
