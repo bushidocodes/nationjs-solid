@@ -5,6 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  immutable: '>=4.3.9 <5'
+  nanoid: '>=3.3.17 <4'
   undici: ^7.29.0
   parse-link-header: ^2.0.0
   uuid: ^11.1.1
@@ -3122,9 +3124,8 @@ packages:
     engines: {node: '>=16.x'}
     hasBin: true
 
-  immutable@3.8.3:
-    resolution: {integrity: sha512-AUY/VyX0E5XlibOmWt10uabJzam1zlYjwiEgQSDc5+UIkFNaF9WM0JxXKaNMGf+F/ffUF+7kRKXM9A7C0xXqMg==}
-    engines: {node: '>=0.10.0'}
+  immutable@4.3.9:
+    resolution: {integrity: sha512-ObHy4YN7ycwZOUCLI1/6svfyAFu7vL8RhAvVu/bh/RZW9EPlOyDaQ9jDQWCtdqzaXUjgXZCW1migtHE7YI7UGQ==}
 
   indent-string@4.0.0:
     resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==}
@@ -3588,8 +3589,8 @@ packages:
     resolution: {integrity: sha512-SQknS0ua90rN+3RHuk8BeIqeYyqIH/+ecViZxX08jR4j6MugqWRjtONl3uANG/crWXnOM2WIqBJtjIhVYFha+w==}
     engines: {node: '>=12.0'}
 
-  nanoid@3.3.16:
-    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
+  nanoid@3.3.18:
+    resolution: {integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -6394,7 +6395,7 @@ snapshots:
       '@comunica/types': 1.22.0
       '@rdfjs/types': 2.0.1
       asynciterator: 3.10.0
-      immutable: 3.8.3
+      immutable: 4.3.9
       rdf-string: 1.6.3
       sparqlalgebrajs: 3.0.3
 
@@ -6507,7 +6508,7 @@ snapshots:
     dependencies:
       '@comunica/context-entries': 1.22.0
       '@comunica/types': 1.22.0
-      immutable: 3.8.3
+      immutable: 4.3.9
 
   '@comunica/data-factory@1.22.0':
     dependencies:
@@ -6567,7 +6568,7 @@ snapshots:
     dependencies:
       '@rdfjs/types': 2.0.1
       asynciterator: 3.10.0
-      immutable: 3.8.3
+      immutable: 4.3.9
       sparqlalgebrajs: 3.0.3
 
   '@comunica/utils-datasource@1.22.2(@comunica/core@1.22.0)':
@@ -8890,7 +8891,7 @@ snapshots:
       queue: 6.0.2
     optional: true
 
-  immutable@3.8.3: {}
+  immutable@4.3.9: {}
 
   indent-string@4.0.0: {}
 
@@ -9526,7 +9527,7 @@ snapshots:
       buffer: 6.0.3
       readable-stream: 4.7.0
 
-  nanoid@3.3.16: {}
+  nanoid@3.3.18: {}
 
   negotiate@1.0.1: {}
 
@@ -9745,7 +9746,7 @@ snapshots:
 
   postcss@8.5.25:
     dependencies:
-      nanoid: 3.3.16
+      nanoid: 3.3.18
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -10338,7 +10339,7 @@ snapshots:
       '@types/uuid': 8.3.4
       decimal.js: 10.6.0
       hash.js: 1.1.7
-      immutable: 3.8.3
+      immutable: 4.3.9
       rdf-data-factory: 1.1.3
       rdf-string: 1.6.3
       relative-to-absolute-iri: 1.0.8
